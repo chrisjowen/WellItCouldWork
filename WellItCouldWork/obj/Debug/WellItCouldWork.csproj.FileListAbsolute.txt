@@ -1,0 +1,9 @@
+C:\Code\WellItCouldWork\WellItCouldWork\bin\Debug\WellItCouldWork.dll
+C:\Code\WellItCouldWork\WellItCouldWork\bin\Debug\WellItCouldWork.pdb
+C:\Code\WellItCouldWork\WellItCouldWork\bin\Debug\nunit.framework.dll
+C:\Code\WellItCouldWork\WellItCouldWork\bin\Debug\nunit.framework.xml
+C:\Code\WellItCouldWork\WellItCouldWork\obj\Debug\ResolveAssemblyReference.cache
+C:\Code\WellItCouldWork\WellItCouldWork\obj\Debug\WellItCouldWork.dll
+C:\Code\WellItCouldWork\WellItCouldWork\obj\Debug\WellItCouldWork.pdb
+C:\Code\WellItCouldWork\WellItCouldWork\bin\Debug\ICSharpCode.NRefactory.dll
+C:\Code\WellItCouldWork\WellItCouldWork\bin\Debug\ICSharpCode.NRefactory.pdb
