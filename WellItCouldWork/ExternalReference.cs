@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Text;
 
 namespace WellItCouldWork
 {
@@ -26,14 +24,6 @@ namespace WellItCouldWork
                 referenceTag.AppendFormat("<HintPath>{0}</HintPath>", Path);
             referenceTag.Append("</Reference>");
             return referenceTag.ToString();
-        }
-    }
-
-    public static class ExternalDependenciesExtentions
-    {
-        public static bool HasADependencyCalled(this IList<ExternalReference> dependencies, string assemblyName)
-        {
-            return dependencies.Any(d => d.AssemblyName == assemblyName);
         }
     }
 }

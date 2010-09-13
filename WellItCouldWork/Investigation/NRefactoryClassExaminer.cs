@@ -4,7 +4,7 @@ using System.Linq;
 using ICSharpCode.NRefactory;
 using ICSharpCode.NRefactory.Ast;
 
-namespace WellItCouldWork.Parser
+namespace WellItCouldWork.Investigation
 {
     internal class NRefactoryClassExaminer : IExamineClassFiles
     {

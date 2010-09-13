@@ -21,5 +21,10 @@ namespace WellItCouldWork
         {
             dependenendClasses.Add(dependentClass);
         }
+
+        public string GetBuildText()
+        {
+            return string.Format("<Compile Include=\"{0}.cs\" />", ClassName);
+        }
     }
 }

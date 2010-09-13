@@ -1,4 +1,6 @@
-﻿namespace System
+﻿using System;
+
+namespace WellItCouldWork.SyntaxHelpers
 {
     public static class StringExtensions
     {

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace WellItCouldWork
+namespace WellItCouldWork.Investigation
 {
     public interface IExamineClassFiles
     {

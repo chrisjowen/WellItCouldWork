@@ -1,6 +1,8 @@
 ﻿using NUnit.Framework;
+using WellItCouldWork.Investigation;
+using WellItCouldWork.Tests.TestSyntaxHelpers;
 
-namespace WellItCouldWork.Tests
+namespace WellItCouldWork.Tests.Investigation
 {
     [TestFixture]
     public class ProjectInvestigatorTests

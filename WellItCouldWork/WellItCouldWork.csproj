@@ -46,22 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BuildFile.cs" />
-    <Compile Include="BuildMonkey.cs" />
-    <Compile Include="Tests\BuildMonkeyTests.cs" />
-    <Compile Include="Parser\CompilationUnitExt.cs" />
-    <Compile Include="Parser\NodeFlattener.cs" />
-    <Compile Include="Parser\NodeExt.cs" />
-    <Compile Include="Parser\NRefactoryClassExaminer.cs" />
+    <Compile Include="BuildCreation\BuildFile.cs" />
+    <Compile Include="BuildCreation\BuildMonkey.cs" />
+    <Compile Include="Tests\TestSyntaxHelpers\ExternalDependenciesExtentions.cs" />
+    <Compile Include="SyntaxHelpers\IGiveAFluentFeelToYourSyntax.cs" />
+    <Compile Include="Tests\BuildCreation\BuildMonkeyTests.cs" />
+    <Compile Include="Investigation\NodeFlattener.cs" />
+    <Compile Include="Investigation\NodeExt.cs" />
+    <Compile Include="Investigation\NRefactoryClassExaminer.cs" />
     <Compile Include="ClassInfo.cs" />
-    <Compile Include="SystemExtensions\GenericListExtensions.cs" />
-    <Compile Include="SystemExtensions\StringExtensions.cs" />
+    <Compile Include="SyntaxHelpers\GenericListExtensions.cs" />
+    <Compile Include="SyntaxHelpers\StringExtensions.cs" />
     <Compile Include="ExternalReference.cs" />
-    <Compile Include="IExamineClassFiles.cs" />
-    <Compile Include="Programmer.cs" />
-    <Compile Include="Tests\ProgrammerTests.cs" />
-    <Compile Include="ProjectInvestigator.cs" />
-    <Compile Include="Tests\ProjectInvestigatorTests.cs" />
+    <Compile Include="Investigation\IExamineClassFiles.cs" />
+    <Compile Include="Investigation\Programmer.cs" />
+    <Compile Include="Tests\Investigation\ProgrammerTests.cs" />
+    <Compile Include="Investigation\ProjectInvestigator.cs" />
+    <Compile Include="Tests\Investigation\ProjectInvestigatorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

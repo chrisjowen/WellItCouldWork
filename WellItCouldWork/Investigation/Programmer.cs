@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
-using WellItCouldWork.Parser;
 
-namespace WellItCouldWork
+namespace WellItCouldWork.Investigation
 {
     public class Programmer
     {

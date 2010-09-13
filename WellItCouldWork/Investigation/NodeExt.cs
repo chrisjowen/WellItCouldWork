@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using ICSharpCode.NRefactory.Ast;
 
-namespace WellItCouldWork.Parser
+namespace WellItCouldWork.Investigation
 {
     public static class NodeExt
     {

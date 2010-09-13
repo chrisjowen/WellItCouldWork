@@ -1,26 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
+using WellItCouldWork.SyntaxHelpers;
 
-namespace WellItCouldWork
+namespace WellItCouldWork.BuildCreation
 {
-    public class BuildMonkey
+    public class BuildMonkey : IGiveAFluentFeelToYourSyntaxFor<BuildMonkey>
     {
         private readonly IList<ClassInfo> classDependencies = new List<ClassInfo>();
         private readonly IList<ExternalReference> references = new List<ExternalReference>();
 
         private BuildMonkey(){}
 
-        public BuildMonkey And
-        {
-            get { return this; }
-        }
-
-        public static BuildFile MakeBuildFile(Action<BuildMonkey> instructions = null)
+        public static string MakeBuildFile(Action<BuildMonkey> instructions = null)
         {
             var buildMonkey = new BuildMonkey();
             buildMonkey.WithStandardReferences();
             if (instructions!=null) instructions.Invoke(buildMonkey);
-            return buildMonkey.Build();
+            return buildMonkey.Build().GenerateOutput();
         }
 
         private void WithStandardReferences()

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace System
+namespace WellItCouldWork.SyntaxHelpers
 {
     public static class GenericListExtensions
     {

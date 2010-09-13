@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Xml;
-using System;
+using WellItCouldWork.SyntaxHelpers;
 
-namespace WellItCouldWork
+namespace WellItCouldWork.Investigation
 {
     public class ProjectInvestigator
     {

@@ -1,7 +1,8 @@
 ﻿using System.Linq;
 using NUnit.Framework;
+using WellItCouldWork.Investigation;
 
-namespace WellItCouldWork.Tests
+namespace WellItCouldWork.Tests.Investigation
 {
     [TestFixture]
     public class ProgrammerTests
