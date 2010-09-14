@@ -13,7 +13,7 @@ namespace WellItCouldWork.Tests.Investigation
         [SetUp]
         public void BeforeEachTest()
         {
-            const string projectSampleLocation = @"Tests/TestData/WellItCouldWork/WellItCouldWork.csproj";
+            const string projectSampleLocation = @"TestData/WellItCouldWork/WellItCouldWork.csproj";
             project = Project.FromFile(projectSampleLocation);
         }
 
@@ -21,7 +21,7 @@ namespace WellItCouldWork.Tests.Investigation
         public void ShouldTellMeTheProjectsNameAndLocation()
         {
             Assert.That(project.ProjectName, Is.EqualTo("WellItCouldWork.csproj"));
-            Assert.That(project.ProjectLocation, Is.EqualTo(Environment.CurrentDirectory + "\\Tests\\TestData\\WellItCouldWork"));
+            Assert.That(project.ProjectLocation, Is.EqualTo(Environment.CurrentDirectory + "\\TestData\\WellItCouldWork"));
         }   
 
         [Test]

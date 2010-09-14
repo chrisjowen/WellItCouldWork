@@ -4,4 +4,5 @@
   <Module PersistentId="EnvDTE, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" ModuleId="EnvDTE" />
   <Module PersistentId="EnvDTE, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" ModuleId="EnvDTE_1" />
   <Module PersistentId="FA91E592-7DB6-43D6-B413-5BBCF008CFEB" ModuleId="WellItCouldWork.Runner" />
+  <Module PersistentId="D768212A-EEC0-4F79-8F57-EC6BDA699744" ModuleId="WellItCouldWork.Tests" />
 </Modules>

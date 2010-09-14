@@ -34,12 +34,6 @@
     <Reference Include="ICSharpCode.NRefactory">
       <HintPath>..\Libs\ICSharpCode.NRefactory.dll</HintPath>
     </Reference>
-    <Reference Include="nunit.framework">
-      <HintPath>..\Tools\NUnit\nunit.framework.dll</HintPath>
-    </Reference>
-    <Reference Include="Rhino.Mocks">
-      <HintPath>..\Libs\Rhino.Mocks\Rhino.Mocks.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -51,37 +45,21 @@
   <ItemGroup>
     <Compile Include="BuildCreation\BuildFile.cs" />
     <Compile Include="BuildCreation\BuildMonkey.cs" />
+    <Compile Include="Class.cs" />
     <Compile Include="Investigation\IProject.cs" />
     <Compile Include="Investigation\ISolution.cs" />
+    <Compile Include="Reference.cs" />
     <Compile Include="SyntaxHelpers\TypeExt.cs" />
     <Compile Include="SyntaxHelpers\IGiveAFluentFeelToYourSyntaxFor.cs" />
-    <Compile Include="Tests\BuildCreation\BuildFileTests.cs" />
     <Compile Include="Investigation\NodeFlattener.cs" />
     <Compile Include="Investigation\NodeExt.cs" />
     <Compile Include="Investigation\NRefactoryClassExaminer.cs" />
-    <Compile Include="Class.cs" />
     <Compile Include="SyntaxHelpers\GenericListExtensions.cs" />
     <Compile Include="SyntaxHelpers\StringExtensions.cs" />
-    <Compile Include="Reference.cs" />
     <Compile Include="Investigation\IExamineClassFiles.cs" />
-    <Compile Include="Tests\BuildCreation\BuildMonkeyTests.cs" />
-    <Compile Include="Tests\ClassTests.cs" />
-    <Compile Include="Tests\Investigation\NRefactoryClassExaminerTests.cs" />
     <Compile Include="Investigation\Project.cs" />
-    <Compile Include="Tests\Investigation\ProjectTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Investigation\Solution.cs" />
-    <Compile Include="Tests\Investigation\SolutionTests.cs" />
-    <Compile Include="Tests\TestData\SolutionStub.cs" />
-    <Compile Include="Tests\TestSyntaxHelpers\ProjectExt.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Tests\TestData\WellItCouldWork\WellItCouldWork.csproj">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Tests\TestData\WellItCouldWork.sln">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

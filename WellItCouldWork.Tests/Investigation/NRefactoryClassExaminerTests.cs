@@ -28,7 +28,7 @@ namespace WellItCouldWork.Tests.Investigation
             const string sourceCode = @"public class Foo { Bar b = new Bar(); }";
             var classInfo = classExaminer.ExamineClassDependencies(sourceCode);
             Assert.That(classInfo.Count, Is.EqualTo(1));
-            Assert.That(classInfo.First().ClassName, Is.EqualTo("Bar"));
+            Assert.That(classInfo.First().ClassName, Is.EqualTo("Bar.cs"));
         }
 
         [Test]
@@ -38,7 +38,7 @@ namespace WellItCouldWork.Tests.Investigation
             var classInfo = classExaminer.ExamineClassDependencies(sourceCode);
 
             Assert.That(classInfo.Count, Is.EqualTo(1));
-            Assert.That(classInfo.First().ClassName, Is.EqualTo("Bar"));
+            Assert.That(classInfo.First().ClassName, Is.EqualTo("Bar.cs"));
         }
 
         [Test]

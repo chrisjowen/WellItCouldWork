@@ -14,7 +14,7 @@
       <Item value="return" priority="50" />
       <Item value="new" priority="58" />
       <Item value="ProjectSummary" priority="0" />
-      <Item value="var" priority="40" />
+      <Item value="var" priority="41" />
       <Item value="ExternalDependencies`0" priority="0" />
       <Item value="ExternalDependencies" priority="0" />
       <Item value="propg" priority="0" />
@@ -154,7 +154,7 @@
       <Item value="operator" priority="1" />
       <Item value="Class`0" priority="4" />
       <Item value="classes" priority="0" />
-      <Item value="Class" priority="3" />
+      <Item value="Class" priority="4" />
       <Item value="List&lt;Reference&gt;" priority="3" />
       <Item value="Reference" priority="0" />
       <Item value="BuildMonkeyTests`0" priority="0" />
@@ -177,7 +177,8 @@
       <Item value="ApplicationException" priority="0" />
       <Item value="args" priority="0" />
       <Item value="solutionDir" priority="0" />
-      <Item value="Console`0" priority="0" />
+      <Item value="Console`0" priority="1" />
+      <Item value="testFileDir" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.String">
       <Item value="Format`0" priority="7" />
@@ -315,7 +316,7 @@
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.IO.FileInfo">
       <Item value="DirectoryName" priority="2" />
-      <Item value="Name" priority="2" />
+      <Item value="Name" priority="3" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Text.RegularExpressions.Regex">
       <Item value="Matches`0" priority="0" />
@@ -377,68 +378,42 @@
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.Console">
       <Item value="WriteLine`0" priority="0" />
+      <Item value="ReadLine`0" priority="0" />
     </ItemStatistics>
   </CompletionStatisticsManager>
   <RecentFiles>
     <RecentFiles>
       <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:SyntaxHelpers/f:GenericListExtensions.cs" caret="70" fromTop="1" />
       <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:SyntaxHelpers/f:StringExtensions.cs" caret="59" fromTop="2" />
-      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Tests/d:TestData/d:WellItCouldWork/f:WellItCouldWork.csproj" caret="1169" fromTop="0" />
-      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Tests/d:TestSyntaxHelpers/f:ProjectExt.cs" caret="0" fromTop="0" />
       <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:SyntaxHelpers/f:TypeExt.cs" caret="126" fromTop="3" />
       <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Investigation/f:NodeExt.cs" caret="610" fromTop="21" />
       <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Investigation/f:NodeFlattener.cs" caret="0" fromTop="0" />
-      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Tests/d:TestData/f:WellItCouldWork.sln" caret="932" fromTop="19" />
-      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Tests/f:ClassTests.cs" caret="0" fromTop="0" />
-      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/f:Reference.cs" caret="69" fromTop="3" />
-      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Tests/d:BuildCreation/f:BuildFileTests.cs" caret="1498" fromTop="32" />
-      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Investigation/f:IExamineClassFiles.cs" caret="208" fromTop="6" />
       <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Investigation/f:ISolution.cs" caret="205" fromTop="7" />
-      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Investigation/f:Solution.cs" caret="1404" fromTop="32" />
       <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:BuildCreation/f:BuildFile.cs" caret="1394" fromTop="33" />
-      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Tests/d:Investigation/f:NRefactoryClassExaminerTests.cs" caret="178" fromTop="6" />
-      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Investigation/f:Project.cs" caret="1235" fromTop="34" />
-      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Tests/d:Investigation/f:ProjectTests.cs" caret="334" fromTop="10" />
-      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Tests/d:TestData/f:SolutionStub.cs" caret="642" fromTop="19" />
-      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Tests/d:Investigation/f:SolutionTests.cs" caret="727" fromTop="17" />
-      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:BuildCreation/f:BuildMonkey.cs" caret="504" fromTop="12" />
       <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:SyntaxHelpers/f:IGiveAFluentFeelToYourSyntaxFor.cs" caret="0" fromTop="0" />
-      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Tests/d:BuildCreation/f:BuildMonkeyTests.cs" caret="558" fromTop="5" />
-      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Investigation/f:NRefactoryClassExaminer.cs" caret="210" fromTop="8" />
-      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/f:Class.cs" caret="997" fromTop="38" />
-      <File id="FA91E592-7DB6-43D6-B413-5BBCF008CFEB/f:Program.cs" caret="281" fromTop="11" />
+      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Investigation/f:Project.cs" caret="610" fromTop="4" />
+      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:BuildCreation/f:BuildMonkey.cs" caret="1832" fromTop="14" />
+      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Investigation/f:NRefactoryClassExaminer.cs" caret="1453" fromTop="28" />
+      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Investigation/f:Solution.cs" caret="676" fromTop="20" />
+      <File id="FA91E592-7DB6-43D6-B413-5BBCF008CFEB/f:Program.cs" caret="540" fromTop="13" />
+      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Investigation/f:IExamineClassFiles.cs" caret="208" fromTop="6" />
+      <File id="D768212A-EEC0-4F79-8F57-EC6BDA699744/d:Investigation/f:SolutionTests.cs" caret="612" fromTop="15" />
     </RecentFiles>
     <RecentEdits>
-      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Investigation/f:Solution.cs" caret="207" fromTop="7" />
-      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:BuildCreation/f:BuildMonkey.cs" caret="773" fromTop="21" />
-      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Tests/d:BuildCreation/f:BuildMonkeyTests.cs" caret="774" fromTop="14" />
-      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:BuildCreation/f:BuildFile.cs" caret="1394" fromTop="33" />
-      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Tests/d:BuildCreation/f:BuildFileTests.cs" caret="305" fromTop="8" />
-      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Tests/d:BuildCreation/f:BuildFileTests.cs" caret="1498" fromTop="32" />
       <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:BuildCreation/f:BuildMonkey.cs" caret="1087" fromTop="10" />
-      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Tests/d:BuildCreation/f:BuildMonkeyTests.cs" caret="1984" fromTop="38" />
-      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Tests/d:BuildCreation/f:BuildMonkeyTests.cs" caret="988" fromTop="21" />
-      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Tests/d:BuildCreation/f:BuildMonkeyTests.cs" caret="1468" fromTop="31" />
       <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Investigation/f:ISolution.cs" caret="236" fromTop="8" />
-      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Investigation/f:Solution.cs" caret="1435" fromTop="32" />
-      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Tests/d:TestData/f:SolutionStub.cs" caret="655" fromTop="21" />
-      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Tests/d:TestData/f:SolutionStub.cs" caret="171" fromTop="5" />
-      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Tests/d:BuildCreation/f:BuildMonkeyTests.cs" caret="1507" fromTop="18" />
-      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Tests/d:BuildCreation/f:BuildMonkeyTests.cs" caret="1945" fromTop="25" />
-      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/f:Class.cs" caret="251" fromTop="8" />
-      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/f:Class.cs" caret="396" fromTop="15" />
-      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/f:Class.cs" caret="629" fromTop="22" />
+      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Investigation/f:Solution.cs" caret="1436" fromTop="32" />
       <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Investigation/f:Project.cs" caret="2311" fromTop="22" />
       <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Investigation/f:Project.cs" caret="1235" fromTop="22" />
-      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Tests/d:Investigation/f:NRefactoryClassExaminerTests.cs" caret="193" fromTop="6" />
       <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:BuildCreation/f:BuildMonkey.cs" caret="33" fromTop="0" />
       <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:BuildCreation/f:BuildMonkey.cs" caret="974" fromTop="26" />
       <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:BuildCreation/f:BuildMonkey.cs" caret="1174" fromTop="31" />
       <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:BuildCreation/f:BuildMonkey.cs" caret="377" fromTop="9" />
       <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Investigation/f:NRefactoryClassExaminer.cs" caret="210" fromTop="8" />
-      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/f:Class.cs" caret="888" fromTop="33" />
-      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/f:Class.cs" caret="997" fromTop="38" />
-      <File id="FA91E592-7DB6-43D6-B413-5BBCF008CFEB/f:Program.cs" caret="796" fromTop="21" />
+      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Investigation/f:Solution.cs" caret="817" fromTop="25" />
+      <File id="FA91E592-7DB6-43D6-B413-5BBCF008CFEB/f:Program.cs" caret="613" fromTop="15" />
+      <File id="FA91E592-7DB6-43D6-B413-5BBCF008CFEB/f:Program.cs" caret="855" fromTop="20" />
+      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Investigation/f:NRefactoryClassExaminer.cs" caret="1401" fromTop="24" />
     </RecentEdits>
   </RecentFiles>
   <NAntValidationSettings>
