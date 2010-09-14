@@ -1,5 +1,7 @@
 <Modules>
   <Module PersistentId="E9F925B8-C23D-448D-99F3-F11291CE505D" ModuleId="WellItCouldWork" />
-  <Module PersistentId="ICSharpCode.NRefactory, Version=0.0.0.0, Culture=neutral, PublicKeyToken=efe927acf176eea2" ModuleId="ICSharpCode.NRefactory" />
-  <Module PersistentId="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" ModuleId="mscorlib" />
+  <Module PersistentId="d:Miscellaneous Files" ModuleId="ICSharpCode.NRefactory" />
+  <Module PersistentId="EnvDTE, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" ModuleId="EnvDTE" />
+  <Module PersistentId="EnvDTE, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" ModuleId="EnvDTE_1" />
+  <Module PersistentId="FA91E592-7DB6-43D6-B413-5BBCF008CFEB" ModuleId="WellItCouldWork.Runner" />
 </Modules>

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using ICSharpCode.NRefactory;
@@ -6,16 +7,8 @@ using ICSharpCode.NRefactory.Ast;
 
 namespace WellItCouldWork.Investigation
 {
-    internal class NRefactoryClassExaminer : IExamineClassFiles
+    public class NRefactoryClassExaminer : IExamineClassFiles
     {
-        public IList<ClassInfo> Examine(string code)
-        {
-            var result =  GetCompilationResult(code);
-            var flattenedTree = result.Flatten();
-            var typeDeclerations = flattenedTree.OfType<TypeDeclaration>();
-            return typeDeclerations.Select(ClassInfoFrom).ToList();
-        }
-
         private static CompilationUnit GetCompilationResult(string sourceCode)
         {
             using (var parser = ParserFactory.CreateParser(SupportedLanguage.CSharp, new StringReader(sourceCode)))
@@ -26,12 +19,25 @@ namespace WellItCouldWork.Investigation
             }
         }
 
-        private static ClassInfo ClassInfoFrom(TypeDeclaration type)
+        private static IList<Class> ClassInfoFrom(TypeDeclaration type)
         {
-            var classInfo = new ClassInfo(type.Name);
-            foreach (var dependentType in type.Flatten().OfType<ObjectCreateExpression>())
-                classInfo.AddDependentClass(new ClassInfo(dependentType.CreateType.Type));
-            return classInfo;
+            return type.Flatten().OfType<ObjectCreateExpression>()
+                .Select(dependentType => new Class(dependentType.CreateType.Type))
+                .ToList();
+        }
+
+        public IList<Reference> ExamineReferences(string code)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IList<Class> ExamineClassDependencies(string code)
+        {
+            var result = GetCompilationResult(code);
+            IEnumerable<INode> enumerable = result.Flatten();
+            return enumerable.OfType<ObjectCreateExpression>()
+                .Select(dependentType => new Class(dependentType.CreateType.Type + ".cs"))
+                .ToList();
         }
     }
 }

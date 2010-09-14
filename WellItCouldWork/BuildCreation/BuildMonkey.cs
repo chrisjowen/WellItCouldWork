@@ -1,42 +1,54 @@
-﻿using System;
-using System.Collections.Generic;
-using WellItCouldWork.SyntaxHelpers;
+﻿using System.Collections.Generic;
+using WellItCouldWork.Investigation;
 
 namespace WellItCouldWork.BuildCreation
 {
-    public class BuildMonkey : IGiveAFluentFeelToYourSyntaxFor<BuildMonkey>
+    public class BuildMonkey 
     {
-        private readonly IList<ClassInfo> classDependencies = new List<ClassInfo>();
-        private readonly IList<ExternalReference> references = new List<ExternalReference>();
+        private readonly IExamineClassFiles classExaminer;
+        private readonly ISolution solution;
+        private IList<Class> classDependencies = new List<Class>();
+        private readonly IList<Reference> references = new List<Reference>();
 
-        private BuildMonkey(){}
-
-        public static string MakeBuildFile(Action<BuildMonkey> instructions = null)
+        public BuildMonkey(IExamineClassFiles classExaminer, ISolution solution)
         {
-            var buildMonkey = new BuildMonkey();
-            buildMonkey.WithStandardReferences();
-            if (instructions!=null) instructions.Invoke(buildMonkey);
-            return buildMonkey.Build().GenerateOutput();
+            this.classExaminer = classExaminer;
+            this.solution = solution;
+        }
+
+        public BuildFile MakeBuildFileFor(string source)
+        {
+            classDependencies = GetInternalClasses(classExaminer.ExamineClassDependencies(source));
+            WithStandardReferences();
+            return CreateBuildFile();
+        }
+
+        private IList<Class> GetInternalClasses(IEnumerable<Class> dependencies)
+        {
+            IList<Class> internalClasses = new List<Class>();
+            if (dependencies == null) return internalClasses;
+
+            foreach (var dependency in dependencies)
+            {
+                var solutionClass = solution.FindClassByExample(dependency);
+                if (solutionClass != null) internalClasses.Add(solutionClass);
+            }
+            return internalClasses;
         }
 
         private void WithStandardReferences()
         {
-            references.Add(new ExternalReference("System"));
-            references.Add(new ExternalReference("System.Core"));
-            references.Add(new ExternalReference("System.Data.DataSetExtensions"));
-            references.Add(new ExternalReference("System.Data"));
-            references.Add(new ExternalReference("System.Xml"));
+            references.Add(new Reference("System"));
+            references.Add(new Reference("System.Core"));
+            references.Add(new Reference("System.Data.DataSetExtensions"));
+            references.Add(new Reference("System.Data"));
+            references.Add(new Reference("System.Xml"));
         }
 
-        private BuildFile Build()
+        private BuildFile CreateBuildFile()
         {
             return new BuildFile(classDependencies, references);
         }
 
-        public BuildMonkey WithAClass(ClassInfo classInfo)
-        {
-            classDependencies.Add(classInfo);
-            return this;
-        }
     }
 }

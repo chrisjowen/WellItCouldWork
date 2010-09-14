@@ -7,3 +7,7 @@ C:\Code\WellItCouldWork\WellItCouldWork\obj\Debug\WellItCouldWork.dll
 C:\Code\WellItCouldWork\WellItCouldWork\obj\Debug\WellItCouldWork.pdb
 C:\Code\WellItCouldWork\WellItCouldWork\bin\Debug\ICSharpCode.NRefactory.dll
 C:\Code\WellItCouldWork\WellItCouldWork\bin\Debug\ICSharpCode.NRefactory.pdb
+C:\Code\WellItCouldWork\WellItCouldWork\bin\Debug\Tests\TestData\WellItCouldWork\WellItCouldWork.csproj
+C:\Code\WellItCouldWork\WellItCouldWork\bin\Debug\Tests\TestData\WellItCouldWork.sln
+C:\Code\WellItCouldWork\WellItCouldWork\bin\Debug\Rhino.Mocks.dll
+C:\Code\WellItCouldWork\WellItCouldWork\bin\Debug\Rhino.Mocks.xml

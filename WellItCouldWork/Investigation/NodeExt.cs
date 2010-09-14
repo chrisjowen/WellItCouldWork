@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using ICSharpCode.NRefactory.Ast;
 
@@ -19,15 +18,7 @@ namespace WellItCouldWork.Investigation
 
         public static IEnumerable<INode> Flatten(this INode unit)
         {
-            var flattened =  new NodeFlattener(unit).Flatten();
-            return flattened;
-        }
-    }
-    public static class TypeExt
-    {
-        public static bool IsNodeOrNodeList(this Type type)
-        {
-            return (typeof (INode).IsAssignableFrom(type) || typeof (IEnumerable<INode>).IsAssignableFrom(type));
+            return new NodeFlattener(unit).Flatten();
         }
     }
 }

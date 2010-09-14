@@ -4,6 +4,7 @@ namespace WellItCouldWork.Investigation
 {
     public interface IExamineClassFiles
     {
-        IList<ClassInfo> Examine(string code);
+        IList<Reference> ExamineReferences(string code);
+        IList<Class> ExamineClassDependencies(string code);
     }
 }

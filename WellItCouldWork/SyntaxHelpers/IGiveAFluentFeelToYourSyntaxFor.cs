@@ -1,10 +1,6 @@
 ﻿namespace WellItCouldWork.SyntaxHelpers
 {
-// ReSharper disable UnusedTypeParameter -> Type used for inferance
-    public interface IGiveAFluentFeelToYourSyntaxFor<T>
-// ReSharper restore UnusedTypeParameter
-    {
-    }
+    public interface IGiveAFluentFeelToYourSyntaxFor<T> { } //Marker interface, generic type required for inference when used
 
     public static class IGiveAFluentFeelToYourSyntaxExt
     {

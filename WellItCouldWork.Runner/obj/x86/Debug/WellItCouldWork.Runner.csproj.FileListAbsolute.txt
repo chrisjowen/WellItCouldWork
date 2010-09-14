@@ -1,0 +1,16 @@
+C:\Code\WellItCouldWork\WellItCouldWork.Runner\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Code\WellItCouldWork\WellItCouldWork.Runner\bin\Debug\Tests\TestData\WellItCouldWork\WellItCouldWork.csproj
+C:\Code\WellItCouldWork\WellItCouldWork.Runner\bin\Debug\Tests\TestData\WellItCouldWork.sln
+C:\Code\WellItCouldWork\WellItCouldWork.Runner\bin\Debug\WellItCouldWork.Runner.exe.config
+C:\Code\WellItCouldWork\WellItCouldWork.Runner\bin\Debug\WellItCouldWork.Runner.exe
+C:\Code\WellItCouldWork\WellItCouldWork.Runner\bin\Debug\WellItCouldWork.Runner.pdb
+C:\Code\WellItCouldWork\WellItCouldWork.Runner\bin\Debug\WellItCouldWork.dll
+C:\Code\WellItCouldWork\WellItCouldWork.Runner\bin\Debug\ICSharpCode.NRefactory.dll
+C:\Code\WellItCouldWork\WellItCouldWork.Runner\bin\Debug\nunit.framework.dll
+C:\Code\WellItCouldWork\WellItCouldWork.Runner\bin\Debug\Rhino.Mocks.dll
+C:\Code\WellItCouldWork\WellItCouldWork.Runner\bin\Debug\WellItCouldWork.pdb
+C:\Code\WellItCouldWork\WellItCouldWork.Runner\bin\Debug\ICSharpCode.NRefactory.pdb
+C:\Code\WellItCouldWork\WellItCouldWork.Runner\bin\Debug\nunit.framework.xml
+C:\Code\WellItCouldWork\WellItCouldWork.Runner\bin\Debug\Rhino.Mocks.xml
+C:\Code\WellItCouldWork\WellItCouldWork.Runner\obj\x86\Debug\WellItCouldWork.Runner.exe
+C:\Code\WellItCouldWork\WellItCouldWork.Runner\obj\x86\Debug\WellItCouldWork.Runner.pdb

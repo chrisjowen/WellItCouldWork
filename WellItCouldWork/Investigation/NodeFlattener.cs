@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Reflection;
 using ICSharpCode.NRefactory.Ast;
+using WellItCouldWork.SyntaxHelpers;
 
 namespace WellItCouldWork.Investigation
 {

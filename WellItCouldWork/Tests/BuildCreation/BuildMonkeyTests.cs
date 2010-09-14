@@ -1,42 +1,56 @@
-﻿using NUnit.Framework;
+﻿using System.Collections.Generic;
+using NUnit.Framework;
+using Rhino.Mocks;
 using WellItCouldWork.BuildCreation;
+using WellItCouldWork.Investigation;
 
 namespace WellItCouldWork.Tests.BuildCreation
 {
     [TestFixture]
     public class BuildMonkeyTests
     {
-        private readonly ClassInfo fooClassInfo = new ClassInfo("Foo");
+        private IExamineClassFiles examiner;
+        private ISolution solution;
 
-        [Test]
-        public void EmptyBuildFileOutputHasDefaultProjectInfo()
+        [SetUp]
+        public void BeforeEachTest()
         {
-            var buildFileOutput = BuildMonkey.MakeBuildFile();
-            Assert.That(buildFileOutput.Contains("<?xml version=\"1.0\" encoding=\"utf-8\"?>"));
-            Assert.That(buildFileOutput.Contains("<Project ToolsVersion=\"4.0\" DefaultTargets=\"Build\" xmlns=\"http://schemas.microsoft.com/developer/msbuild/2003\">"));
-            Assert.That(buildFileOutput.Contains("</Project>"));
+            examiner = MockRepository.GenerateStub<IExamineClassFiles>();
+            solution = MockRepository.GenerateStub<ISolution>();
         }
 
         [Test]
-        public void EmptyBuildFileOutputHasStandardReferences()
+        public void ShouldRetrieveClassDependenciesFromExaminer()
         {
-            var buildFileOutput = BuildMonkey.MakeBuildFile();
-            Assert.That(buildFileOutput.Contains("<ItemGroup>"));
-            Assert.That(buildFileOutput.Contains("<Reference Include=\"System\"></Reference>"));
-            Assert.That(buildFileOutput.Contains("<Reference Include=\"System\"></Reference>"));
-            Assert.That(buildFileOutput.Contains("<Reference Include=\"System.Core\"></Reference>"));
-            Assert.That(buildFileOutput.Contains("<Reference Include=\"System.Data.DataSetExtensions\"></Reference>"));
-            Assert.That(buildFileOutput.Contains("<Reference Include=\"System.Data\"></Reference>"));
-            Assert.That(buildFileOutput.Contains("<Reference Include=\"System.Xml\"></Reference>"));
-            Assert.That(buildFileOutput.Contains("</ItemGroup>"));
+            const string source = @"public class Foo() {}";
+            new BuildMonkey(examiner, solution).MakeBuildFileFor(source);
+            examiner.AssertWasCalled(e => e.ExamineClassDependencies(source));
+        }        
+        
+        [Test]
+        public void ShouldNotAddDependenciesToBuildFileIfNotInSolution()
+        {
+            examiner.Stub(e => e.ExamineClassDependencies(Arg<string>.Is.Anything))
+                    .Return(new List<Class> { new Class("Foo.cs") });
+
+            var buildFile = new BuildMonkey(examiner, solution).MakeBuildFileFor(string.Empty);
+            Assert.That(!buildFile.GenerateOutput().Contains("Foo.cs"), "Foo.cs should not be found in the solution");
         }
 
         [Test]
-        public void ShouldCreateABuildFileContainingAGivenClass()
+        public void ShouldAddDependencyIfInSolution()
         {
-            var buildFileOutput = BuildMonkey.MakeBuildFile(m => m.WithAClass(fooClassInfo));
-            Assert.That(buildFileOutput.Contains(string.Format("<Compile Include=\"{0}.cs\" />", fooClassInfo.ClassName)));
+            var fooClass = new Class("Foo.cs");
+            examiner.Stub(e => e.ExamineClassDependencies(Arg<string>.Is.Anything))
+                    .Return(new List<Class> { fooClass });
 
+            solution.Stub(s => s.FindClassByExample(fooClass)).Return(fooClass);
+
+            var buildFile = new BuildMonkey(examiner, solution).MakeBuildFileFor(string.Empty);
+            Assert.That(buildFile.GenerateOutput().Contains("Foo.cs"), "Foo.cs should be found in the solution");
         }
     }    
+    
 }
+
+
