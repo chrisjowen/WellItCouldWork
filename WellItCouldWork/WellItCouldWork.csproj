@@ -43,23 +43,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BuildCreation\BuildFile.cs" />
-    <Compile Include="BuildCreation\BuildMonkey.cs" />
+    <Compile Include="BuildCreation\BuildFileGenerator.cs" />
+    <Compile Include="BuildCreation\BuildFiles.cs" />
+    <Compile Include="BuildCreation\Programmer.cs" />
     <Compile Include="Class.cs" />
-    <Compile Include="Investigation\IProject.cs" />
-    <Compile Include="Investigation\ISolution.cs" />
+    <Compile Include="Investigation\IProjectFile.cs" />
+    <Compile Include="Investigation\ISolutionFile.cs" />
     <Compile Include="Reference.cs" />
+    <Compile Include="SourceFromFileRepository.cs" />
     <Compile Include="SyntaxHelpers\TypeExt.cs" />
     <Compile Include="SyntaxHelpers\IGiveAFluentFeelToYourSyntaxFor.cs" />
     <Compile Include="Investigation\NodeFlattener.cs" />
     <Compile Include="Investigation\NodeExt.cs" />
-    <Compile Include="Investigation\NRefactoryClassExaminer.cs" />
+    <Compile Include="Investigation\NRefactorySourceExaminer.cs" />
     <Compile Include="SyntaxHelpers\GenericListExtensions.cs" />
     <Compile Include="SyntaxHelpers\StringExtensions.cs" />
-    <Compile Include="Investigation\IExamineClassFiles.cs" />
-    <Compile Include="Investigation\Project.cs" />
+    <Compile Include="Investigation\IExamineSourceFiles.cs" />
+    <Compile Include="Investigation\ProjectFile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Investigation\Solution.cs" />
+    <Compile Include="Investigation\SolutionFile.cs" />
+    <Compile Include="TypeInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

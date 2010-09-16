@@ -4,7 +4,7 @@ using System.Xml;
 
 namespace WellItCouldWork.Investigation
 {
-    public class Project : IProject
+    public class ProjectFile : IProjectFile
     {
         private XmlNode projectDocumentRoot;
         public string ProjectLocation { get; private set; }
@@ -12,14 +12,14 @@ namespace WellItCouldWork.Investigation
         public List<Reference> References { get; private set; }
         public IList<Class> Classes { get; private set; }
 
-        private Project()
+        private ProjectFile()
         {
             References = new List<Reference>();
         }
 
-        public static Project FromFile(string projectFile)
+        public static ProjectFile FromFile(string projectFile)
         {
-            var project = new Project();
+            var project = new ProjectFile();
             var projectDocument = new XmlDocument();
             projectDocument.Load(projectFile);
             project.projectDocumentRoot = projectDocument.DocumentElement;

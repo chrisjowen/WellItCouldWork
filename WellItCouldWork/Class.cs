@@ -24,19 +24,9 @@ namespace WellItCouldWork
             return new Class(fileInfo.Name, fileInfo.DirectoryName);
         }
 
-        public static implicit operator Class(string className)
-        {
-            return new Class(className);
-        }
-
         public string FullPath
         {
             get { return string.Format("{0}//{1}", Path, ClassName); }
-        }
-
-        public string GetSource()
-        {
-            return File.ReadAllText(FullPath);
         }
     }
 }

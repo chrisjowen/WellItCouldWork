@@ -1,6 +1,4 @@
-﻿using System.Text;
-
-namespace WellItCouldWork
+﻿namespace WellItCouldWork
 {
     public class Reference
     {
@@ -14,6 +12,7 @@ namespace WellItCouldWork
             : this(assemblyName, string.Empty)
         {
         }
+
         public string AssemblyName { get; private set; }
         public string Path { get; private set; }
     }

@@ -9,18 +9,18 @@
   </SettingsComponent>
   <CompletionStatisticsManager>
     <ItemStatistics item="Default">
-      <Item value="IList" priority="10" />
+      <Item value="IList" priority="13" />
       <Item value="string" priority="31" />
-      <Item value="return" priority="50" />
-      <Item value="new" priority="58" />
+      <Item value="return" priority="56" />
+      <Item value="new" priority="67" />
       <Item value="ProjectSummary" priority="0" />
-      <Item value="var" priority="41" />
+      <Item value="var" priority="47" />
       <Item value="ExternalDependencies`0" priority="0" />
       <Item value="ExternalDependencies" priority="0" />
       <Item value="propg" priority="0" />
       <Item value="AssemblyName" priority="1" />
       <Item value="XmlDocument`0" priority="0" />
-      <Item value="class" priority="8" />
+      <Item value="class" priority="9" />
       <Item value="public" priority="34" />
       <Item value="void" priority="6" />
       <Item value="emptyClassTemplate" priority="1" />
@@ -39,22 +39,22 @@
       <Item value="System" priority="0" />
       <Item value="Linq" priority="0" />
       <Item value="private" priority="8" />
-      <Item value="foreach" priority="11" />
+      <Item value="foreach" priority="12" />
       <Item value="INode`0" priority="13" />
-      <Item value="node" priority="9" />
+      <Item value="node" priority="11" />
       <Item value="YieldStatement`0" priority="0" />
       <Item value="yield return" priority="1" />
       <Item value="child" priority="2" />
-      <Item value="if" priority="11" />
+      <Item value="if" priority="14" />
       <Item value="bool" priority="3" />
       <Item value="RecurseChildren`0" priority="0" />
-      <Item value="List" priority="2" />
+      <Item value="List" priority="3" />
       <Item value="List&lt;INode&gt;" priority="0" />
       <Item value="nodes" priority="5" />
       <Item value="TypeDeclaration`0" priority="4" />
       <Item value="NodeExt`0" priority="2" />
       <Item value="is" priority="5" />
-      <Item value="in" priority="1" />
+      <Item value="in" priority="2" />
       <Item value="types" priority="0" />
       <Item value="type" priority="6" />
       <Item value="classInfos" priority="0" />
@@ -97,10 +97,10 @@
       <Item value="ToString`0" priority="0" />
       <Item value="className" priority="1" />
       <Item value="BuildFile" priority="1" />
-      <Item value="c" priority="2" />
+      <Item value="c" priority="3" />
       <Item value="BuildFile`0" priority="2" />
       <Item value="List&lt;ExternalReference&gt;" priority="1" />
-      <Item value="references" priority="5" />
+      <Item value="references" priority="6" />
       <Item value="ExternalReference" priority="0" />
       <Item value="assemblyName" priority="0" />
       <Item value="ExternalReference`0" priority="1" />
@@ -139,7 +139,7 @@
       <Item value="Path`0" priority="0" />
       <Item value="ProjectTests`0" priority="0" />
       <Item value="List&lt;Project&gt;" priority="0" />
-      <Item value="solution" priority="8" />
+      <Item value="solution" priority="10" />
       <Item value="projectName" priority="0" />
       <Item value="File`0" priority="1" />
       <Item value="filePath" priority="0" />
@@ -147,21 +147,21 @@
       <Item value="Project" priority="0" />
       <Item value="match" priority="0" />
       <Item value="SetUp" priority="1" />
-      <Item value="List&lt;Class&gt;" priority="6" />
+      <Item value="List&lt;Class&gt;" priority="7" />
       <Item value="NRefactoryClassExaminer`0" priority="1" />
       <Item value="IExamineClassFiles`0" priority="2" />
       <Item value="implicit" priority="1" />
       <Item value="operator" priority="1" />
-      <Item value="Class`0" priority="4" />
+      <Item value="Class`0" priority="6" />
       <Item value="classes" priority="0" />
-      <Item value="Class" priority="4" />
-      <Item value="List&lt;Reference&gt;" priority="3" />
-      <Item value="Reference" priority="0" />
+      <Item value="Class" priority="5" />
+      <Item value="List&lt;Reference&gt;" priority="5" />
+      <Item value="Reference" priority="2" />
       <Item value="BuildMonkeyTests`0" priority="0" />
       <Item value="examiner" priority="1" />
       <Item value="ISolution`0" priority="0" />
       <Item value="e" priority="0" />
-      <Item value="source" priority="0" />
+      <Item value="source" priority="1" />
       <Item value="classDependencies" priority="0" />
       <Item value="Arg" priority="0" />
       <Item value="classExaminer" priority="0" />
@@ -169,7 +169,7 @@
       <Item value="dependency" priority="1" />
       <Item value="dependencies" priority="0" />
       <Item value="internalClasses" priority="0" />
-      <Item value="s" priority="0" />
+      <Item value="s" priority="1" />
       <Item value="path" priority="0" />
       <Item value="fileInfo" priority="1" />
       <Item value="Count`1" priority="0" />
@@ -179,6 +179,26 @@
       <Item value="solutionDir" priority="0" />
       <Item value="Console`0" priority="1" />
       <Item value="testFileDir" priority="0" />
+      <Item value="switch" priority="0" />
+      <Item value="case" priority="0" />
+      <Item value="typeof" priority="2" />
+      <Item value="T`0" priority="0" />
+      <Item value="dependentClasses" priority="0" />
+      <Item value="TypeReference`0" priority="0" />
+      <Item value="code" priority="0" />
+      <Item value="comparer" priority="0" />
+      <Item value="char" priority="0" />
+      <Item value="x" priority="1" />
+      <Item value="y" priority="1" />
+      <Item value="TemplateDefinition`0" priority="0" />
+      <Item value="TypeInfo`0" priority="5" />
+      <Item value="Reference`0" priority="2" />
+      <Item value="allReferences" priority="0" />
+      <Item value="sourceCode" priority="0" />
+      <Item value="MakeBuildFileFor`0" priority="0" />
+      <Item value="sourceCodeRepo" priority="0" />
+      <Item value="IGetSourceCode`0" priority="0" />
+      <Item value="sr" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.String">
       <Item value="Format`0" priority="7" />
@@ -202,7 +222,8 @@
     </ItemStatistics>
     <ItemStatistics item="Qualified:ICSharpCode.NRefactory.Ast.INode">
       <Item value="Children" priority="2" />
-      <Item value="GetType`0" priority="1" />
+      <Item value="GetType`0" priority="2" />
+      <Item value="ToString`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Collections.Generic.List`1">
       <Item value="Count" priority="0" />
@@ -211,7 +232,7 @@
       <Item value="AsReadOnly`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Collections.Generic.IEnumerable`1">
-      <Item value="ToList`1" priority="3" />
+      <Item value="ToList`1" priority="5" />
       <Item value="Cast`1" priority="2" />
       <Item value="SelectMany`3" priority="1" />
       <Item value="Select`2" priority="1" />
@@ -219,18 +240,20 @@
       <Item value="Count`1" priority="1" />
       <Item value="Concat`1" priority="0" />
       <Item value="OfType`1" priority="0" />
-      <Item value="Distinct`1" priority="0" />
+      <Item value="Distinct`1" priority="2" />
       <Item value="FirstOrDefault`1" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Collections.Generic.IList`1">
-      <Item value="Add`0" priority="5" />
+      <Item value="Add`0" priority="7" />
       <Item value="First`1" priority="1" />
       <Item value="Select`2" priority="0" />
       <Item value="SelectMany`3" priority="0" />
       <Item value="Count" priority="0" />
+      <Item value="Any`1" priority="0" />
+      <Item value="Distinct`1" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:ICSharpCode.NRefactory.Ast.TypeDeclaration">
-      <Item value="Name" priority="0" />
+      <Item value="Name" priority="1" />
       <Item value="Flatten`0" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:WellItCouldWork.ClassInfo">
@@ -242,7 +265,7 @@
       <Item value="CreateType" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:ICSharpCode.NRefactory.Ast.TypeReference">
-      <Item value="Type" priority="0" />
+      <Item value="Type" priority="2" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:ICSharpCode.NRefactory.Ast.FieldDeclaration">
       <Item value="Fields" priority="0" />
@@ -252,7 +275,9 @@
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Type">
       <Item value="GetProperties`0" priority="0" />
-      <Item value="IsAssignableFrom`0" priority="1" />
+      <Item value="IsAssignableFrom`0" priority="2" />
+      <Item value="ToString`0" priority="0" />
+      <Item value="Name" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.Reflection.BindingFlags">
       <Item value="Public" priority="0" />
@@ -294,6 +319,8 @@
     <ItemStatistics item="Qualified:System.String">
       <Item value="CompareTo`0" priority="0" />
       <Item value="Contains`0" priority="3" />
+      <Item value="Substring`0" priority="1" />
+      <Item value="Length" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:WellItCouldWork.BuildFile">
       <Item value="GenerateOutput`0" priority="3" />
@@ -316,7 +343,7 @@
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.IO.FileInfo">
       <Item value="DirectoryName" priority="2" />
-      <Item value="Name" priority="3" />
+      <Item value="Name" priority="5" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Text.RegularExpressions.Regex">
       <Item value="Matches`0" priority="0" />
@@ -340,7 +367,8 @@
       <Item value="ClassName" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:WellItCouldWork.Class">
-      <Item value="ClassName" priority="3" />
+      <Item value="ClassName" priority="9" />
+      <Item value="GetType`0" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@WellItCouldWork.BuildCreation.BuildFile">
       <Item value="Empty" priority="0" />
@@ -355,7 +383,7 @@
       <Item value="MakeBuildFileFor`0" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:Rhino.Mocks.Interfaces.IMethodOptions`1">
-      <Item value="Return`0" priority="1" />
+      <Item value="Return`0" priority="3" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@Rhino.Mocks.Arg`1">
       <Item value="Is" priority="0" />
@@ -365,10 +393,12 @@
     </ItemStatistics>
     <ItemStatistics item="Qualified:WellItCouldWork.Investigation.IProject">
       <Item value="Classes" priority="0" />
+      <Item value="References" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:WellItCouldWork.Investigation.ISolution">
       <Item value="FindClassByExample`0" priority="2" />
-      <Item value="Stub`2" priority="0" />
+      <Item value="Stub`2" priority="1" />
+      <Item value="AllReferences" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@WellItCouldWork.Class">
       <Item value="FromPath`0" priority="0" />
@@ -380,40 +410,82 @@
       <Item value="WriteLine`0" priority="0" />
       <Item value="ReadLine`0" priority="0" />
     </ItemStatistics>
+    <ItemStatistics item="Qualified:ICSharpCode.NRefactory.Ast.TemplateDefinition">
+      <Item value="Name" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:WellItCouldWork.TypeInfo">
+      <Item value="Name" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:WellItCouldWork.Investigation.IExamineSourceFiles">
+      <Item value="ExamineTypes`0" priority="1" />
+      <Item value="ExamineReferences`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:WellItCouldWork.IGetSourceCode">
+      <Item value="SourceFor`0" priority="1" />
+      <Item value="Stub`2" priority="0" />
+    </ItemStatistics>
   </CompletionStatisticsManager>
   <RecentFiles>
     <RecentFiles>
       <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:SyntaxHelpers/f:GenericListExtensions.cs" caret="70" fromTop="1" />
-      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:SyntaxHelpers/f:StringExtensions.cs" caret="59" fromTop="2" />
-      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:SyntaxHelpers/f:TypeExt.cs" caret="126" fromTop="3" />
-      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Investigation/f:NodeExt.cs" caret="610" fromTop="21" />
-      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Investigation/f:NodeFlattener.cs" caret="0" fromTop="0" />
-      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Investigation/f:ISolution.cs" caret="205" fromTop="7" />
       <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:BuildCreation/f:BuildFile.cs" caret="1394" fromTop="33" />
       <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:SyntaxHelpers/f:IGiveAFluentFeelToYourSyntaxFor.cs" caret="0" fromTop="0" />
-      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Investigation/f:Project.cs" caret="610" fromTop="4" />
-      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:BuildCreation/f:BuildMonkey.cs" caret="1832" fromTop="14" />
-      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Investigation/f:NRefactoryClassExaminer.cs" caret="1453" fromTop="28" />
-      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Investigation/f:Solution.cs" caret="676" fromTop="20" />
-      <File id="FA91E592-7DB6-43D6-B413-5BBCF008CFEB/f:Program.cs" caret="540" fromTop="13" />
-      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Investigation/f:IExamineClassFiles.cs" caret="208" fromTop="6" />
-      <File id="D768212A-EEC0-4F79-8F57-EC6BDA699744/d:Investigation/f:SolutionTests.cs" caret="612" fromTop="15" />
+      <File id="D768212A-EEC0-4F79-8F57-EC6BDA699744/d:Investigation/f:SolutionTests.cs" caret="752" fromTop="19" />
+      <File id="D768212A-EEC0-4F79-8F57-EC6BDA699744/d:Investigation/f:ProjectTests.cs" caret="1217" fromTop="36" />
+      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:SyntaxHelpers/f:StringExtensions.cs" caret="145" fromTop="5" />
+      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Investigation/f:Project.cs" caret="135" fromTop="0" />
+      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:SyntaxHelpers/f:TypeExt.cs" caret="385" fromTop="11" />
+      <File id="D768212A-EEC0-4F79-8F57-EC6BDA699744/d:BuildCreation/f:BuildFileTests.cs" caret="533" fromTop="14" />
+      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/f:TypeInfo.cs" caret="52" fromTop="1" />
+      <File id="D768212A-EEC0-4F79-8F57-EC6BDA699744/d:TestSyntaxHelpers/f:SolutionExt.cs" caret="614" fromTop="19" />
+      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Investigation/f:NodeExt.cs" caret="345" fromTop="12" />
+      <File id="D768212A-EEC0-4F79-8F57-EC6BDA699744/d:TestData/f:WellItCouldWork.sln" caret="0" fromTop="0" />
+      <File id="D768212A-EEC0-4F79-8F57-EC6BDA699744/d:TestData/d:WellItCouldWork/f:WellItCouldWork.csproj" caret="2879" fromTop="31" />
+      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Investigation/f:IExamineSourceFiles.cs" caret="106" fromTop="3" />
+      <File id="D768212A-EEC0-4F79-8F57-EC6BDA699744/d:BuildCreation/f:BuildMonkeyTests.cs" caret="982" fromTop="25" />
+      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/f:SourceFromFileRepository.cs" caret="230" fromTop="8" />
+      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Investigation/f:NodeFlattener.cs" caret="0" fromTop="0" />
+      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:BuildCreation/f:BuildMonkey.cs" caret="1091" fromTop="15" />
+      <File id="FA91E592-7DB6-43D6-B413-5BBCF008CFEB/f:Program.cs" caret="744" fromTop="20" />
+      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Investigation/f:ISolution.cs" caret="0" fromTop="0" />
+      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/f:Reference.cs" caret="69" fromTop="3" />
+      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Investigation/f:Solution.cs" caret="267" fromTop="8" />
+      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Investigation/f:IProject.cs" caret="258" fromTop="8" />
+      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/f:Class.cs" caret="67" fromTop="3" />
+      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Investigation/f:NRefactorySourceExaminer.cs" caret="822" fromTop="25" />
+      <File id="D768212A-EEC0-4F79-8F57-EC6BDA699744/d:Investigation/f:NRefactoryClassExaminerTests.cs" caret="588" fromTop="15" />
     </RecentFiles>
     <RecentEdits>
-      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:BuildCreation/f:BuildMonkey.cs" caret="1087" fromTop="10" />
+      <File id="D768212A-EEC0-4F79-8F57-EC6BDA699744/d:Investigation/f:NRefactoryClassExaminerTests.cs" caret="233" fromTop="8" />
+      <File id="D768212A-EEC0-4F79-8F57-EC6BDA699744/d:BuildCreation/f:BuildMonkeyTests.cs" caret="2770" fromTop="37" />
+      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Investigation/f:IExamineSourceFiles.cs" caret="155" fromTop="5" />
+      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Investigation/f:NRefactorySourceExaminer.cs" caret="650" fromTop="20" />
+      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Investigation/f:Solution.cs" caret="189" fromTop="7" />
       <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Investigation/f:ISolution.cs" caret="236" fromTop="8" />
-      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Investigation/f:Solution.cs" caret="1436" fromTop="32" />
-      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Investigation/f:Project.cs" caret="2311" fromTop="22" />
-      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Investigation/f:Project.cs" caret="1235" fromTop="22" />
-      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:BuildCreation/f:BuildMonkey.cs" caret="33" fromTop="0" />
-      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:BuildCreation/f:BuildMonkey.cs" caret="974" fromTop="26" />
-      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:BuildCreation/f:BuildMonkey.cs" caret="1174" fromTop="31" />
-      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:BuildCreation/f:BuildMonkey.cs" caret="377" fromTop="9" />
-      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Investigation/f:NRefactoryClassExaminer.cs" caret="210" fromTop="8" />
-      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Investigation/f:Solution.cs" caret="817" fromTop="25" />
-      <File id="FA91E592-7DB6-43D6-B413-5BBCF008CFEB/f:Program.cs" caret="613" fromTop="15" />
-      <File id="FA91E592-7DB6-43D6-B413-5BBCF008CFEB/f:Program.cs" caret="855" fromTop="20" />
-      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Investigation/f:NRefactoryClassExaminer.cs" caret="1401" fromTop="24" />
+      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Investigation/f:Solution.cs" caret="1217" fromTop="21" />
+      <File id="D768212A-EEC0-4F79-8F57-EC6BDA699744/d:BuildCreation/f:BuildMonkeyTests.cs" caret="608" fromTop="19" />
+      <File id="D768212A-EEC0-4F79-8F57-EC6BDA699744/d:BuildCreation/f:BuildMonkeyTests.cs" caret="2318" fromTop="22" />
+      <File id="D768212A-EEC0-4F79-8F57-EC6BDA699744/d:BuildCreation/f:BuildMonkeyTests.cs" caret="1642" fromTop="23" />
+      <File id="D768212A-EEC0-4F79-8F57-EC6BDA699744/d:BuildCreation/f:BuildMonkeyTests.cs" caret="2230" fromTop="12" />
+      <File id="FA91E592-7DB6-43D6-B413-5BBCF008CFEB/f:Program.cs" caret="911" fromTop="28" />
+      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/f:Class.cs" caret="755" fromTop="33" />
+      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/f:SourceFromFileRepository.cs" caret="260" fromTop="9" />
+      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/f:SourceFromFileRepository.cs" caret="357" fromTop="14" />
+      <File id="FA91E592-7DB6-43D6-B413-5BBCF008CFEB/f:Program.cs" caret="776" fromTop="20" />
+      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:BuildCreation/f:BuildMonkey.cs" caret="574" fromTop="12" />
+      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:BuildCreation/f:BuildMonkey.cs" caret="1141" fromTop="23" />
+      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:BuildCreation/f:BuildMonkey.cs" caret="962" fromTop="19" />
+      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:BuildCreation/f:BuildMonkey.cs" caret="1226" fromTop="12" />
+      <File id="D768212A-EEC0-4F79-8F57-EC6BDA699744/d:BuildCreation/f:BuildMonkeyTests.cs" caret="2066" fromTop="17" />
+      <File id="D768212A-EEC0-4F79-8F57-EC6BDA699744/d:BuildCreation/f:BuildMonkeyTests.cs" caret="2593" fromTop="30" />
+      <File id="D768212A-EEC0-4F79-8F57-EC6BDA699744/d:BuildCreation/f:BuildMonkeyTests.cs" caret="1466" fromTop="5" />
+      <File id="D768212A-EEC0-4F79-8F57-EC6BDA699744/d:BuildCreation/f:BuildMonkeyTests.cs" caret="629" fromTop="9" />
+      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/f:Class.cs" caret="629" fromTop="24" />
+      <File id="D768212A-EEC0-4F79-8F57-EC6BDA699744/d:BuildCreation/f:BuildMonkeyTests.cs" caret="397" fromTop="8" />
+      <File id="D768212A-EEC0-4F79-8F57-EC6BDA699744/d:BuildCreation/f:BuildMonkeyTests.cs" caret="978" fromTop="24" />
+      <File id="D768212A-EEC0-4F79-8F57-EC6BDA699744/d:Investigation/f:NRefactoryClassExaminerTests.cs" caret="0" fromTop="0" />
+      <File id="FA91E592-7DB6-43D6-B413-5BBCF008CFEB/f:Program.cs" caret="792" fromTop="20" />
+      <File id="E9F925B8-C23D-448D-99F3-F11291CE505D/d:Investigation/f:Solution.cs" caret="0" fromTop="0" />
     </RecentEdits>
   </RecentFiles>
   <NAntValidationSettings>

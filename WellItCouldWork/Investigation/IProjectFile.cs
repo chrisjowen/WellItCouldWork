@@ -2,7 +2,7 @@
 
 namespace WellItCouldWork.Investigation
 {
-    public interface IProject
+    public interface IProjectFile
     {
         string ProjectLocation { get; }
         string ProjectName { get; }

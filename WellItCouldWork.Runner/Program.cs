@@ -14,15 +14,14 @@ namespace WellItCouldWork.Runner
 
             var solutionDir = args[0];
             var testFileDir = args[1];
-            var solution = new Solution(solutionDir);
+            var solution = new SolutionFile(solutionDir);
+            var fileName = new FileInfo(testFileDir).Name;
+            fileName = fileName.Substring(0, fileName.Length - 3);
 
-            var fileName = new FileInfo(testFileDir);
+            var monkey = new Programmer(new NRefactorySourceExaminer(), solution, new SourceFromFileRepository());
+            var buildFile = monkey.BuildFilesRequired(fileName);
 
-            var testClass = solution.FindClassByExample(fileName.Name);
-            var buildFile = new BuildMonkey(new NRefactoryClassExaminer(), solution)
-                .MakeBuildFileFor(testClass.GetSource());
-
-            Console.WriteLine(buildFile.GenerateOutput());
+            Console.WriteLine(buildFile.GenerateBuildFile());
             Console.ReadLine();
 
         }

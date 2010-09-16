@@ -16,6 +16,11 @@ namespace WellItCouldWork.Investigation
             return nodes.Where(node => node is T).Cast<T>();
         }
 
+        public static bool IsA<T>(this INode node)
+        {
+            return node.GetType()==typeof(T);
+        }
+
         public static IEnumerable<INode> Flatten(this INode unit)
         {
             return new NodeFlattener(unit).Flatten();

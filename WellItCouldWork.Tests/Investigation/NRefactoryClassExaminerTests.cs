@@ -1,56 +1,75 @@
-﻿using System.Linq;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using WellItCouldWork.Investigation;
+using WellItCouldWork.Tests.TestSyntaxHelpers;
 
 namespace WellItCouldWork.Tests.Investigation
 {
     [TestFixture]
     public class NRefactoryClassExaminerTests
     {
-        private const string WipReason = "Not implemented yet WIP";
-        private readonly IExamineClassFiles classExaminer = new NRefactoryClassExaminer();
+        private readonly IExamineSourceFiles sourceExaminer = new NRefactorySourceExaminer();
         
         [Test]
         public void ShouldTellMeTheInfoAboutASuperClassOfAGivenClass()
         {
-          Assert.True(false, WipReason);
+            const string sourceCode = @"public class Foo : Bar {  }";
+            var types = sourceExaminer.ExamineTypes(sourceCode);
+            Assert.That(types.Count, Is.EqualTo(2));
+            Assert.That(types.ContainsWithName("Foo"));
+            Assert.That(types.ContainsWithName("Bar"));
         }
 
         [Test]
         public void ShouldTellMeTheNameOfAnyInterfacesFoundOnAGivenClass()
         {
-            Assert.True(false, WipReason);
+            const string sourceCode = @"public class Foo : IBar {  }";
+            var types = sourceExaminer.ExamineTypes(sourceCode);
+            Assert.That(types.ContainsWithName("Foo"));
+            Assert.That(types.ContainsWithName("IBar"));
         }
 
         [Test]
         public void ShouldTellMeAboutTheDependenciesAtFieldLevel()
         {
             const string sourceCode = @"public class Foo { Bar b = new Bar(); }";
-            var classInfo = classExaminer.ExamineClassDependencies(sourceCode);
-            Assert.That(classInfo.Count, Is.EqualTo(1));
-            Assert.That(classInfo.First().ClassName, Is.EqualTo("Bar.cs"));
+            var types = sourceExaminer.ExamineTypes(sourceCode);
+            Assert.That(types.Count, Is.EqualTo(2));
+            Assert.That(types.ContainsWithName("Foo"));
+            Assert.That(types.ContainsWithName("Bar"));
         }
 
         [Test]
         public void ShouldTellMeAboutTheDependenciesAtLocalVarLevel()
         {
-            const string sourceCode = @"public class Foo { public void Foos() { Bar b = new Bar(); } }";
-            var classInfo = classExaminer.ExamineClassDependencies(sourceCode);
-
-            Assert.That(classInfo.Count, Is.EqualTo(1));
-            Assert.That(classInfo.First().ClassName, Is.EqualTo("Bar.cs"));
+            const string sourceCode = @"public class Foo { public void FooMethod() { Bar b = new Bar(); } }";
+            var types = sourceExaminer.ExamineTypes(sourceCode);
+            Assert.That(types.Count, Is.EqualTo(3));
+            Assert.That(types.ContainsWithName("Foo"));
+            Assert.That(types.ContainsWithName("Bar"));
         }
-
+            
         [Test]
         public void ShouldTellMeTheNameOfAnyDepndenciesWhenCasting()
         {
-            Assert.True(false, WipReason);
+            const string sourceCode = @"public class Foo { public void FooMethod() { return (Bar)""abc""; } }";
+            var types = sourceExaminer.ExamineTypes(sourceCode);
+            Assert.That(types.ContainsWithName("Bar"));
         }
 
         [Test]
-        public void ShouldTellMeTheNameOfAnyDepndencies()
+        public void ShouldTellMeTheNameOfAnyDepndenciesUsedInGenericObjectConstruction()
         {
-            Assert.True(false, WipReason);
+            const string sourceCode = @"public class Foo { public void FooMethod() { return new List<Bar>(); } }";
+            var types = sourceExaminer.ExamineTypes(sourceCode);
+            Assert.That(types.ContainsWithName("Bar"));
+        }        
+        
+        [Test]
+        public void ShouldTellMeTheNameOfAnyDepndenciesUsedInGenericConstructor()
+        {
+            const string sourceCode = @"public class Foo<Bar> {  } }";
+            var types = sourceExaminer.ExamineTypes(sourceCode);
+            Assert.That(types.ContainsWithName("Bar"));
         }
     }
 

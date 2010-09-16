@@ -58,9 +58,9 @@
     <Compile Include="ClassTests.cs" />
     <Compile Include="Investigation\NRefactoryClassExaminerTests.cs" />
     <Compile Include="Investigation\ProjectTests.cs" />
+    <Compile Include="TestSyntaxHelpers\SolutionExt.cs" />
     <Compile Include="Investigation\SolutionTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TestData\SolutionStub.cs" />
     <Compile Include="TestSyntaxHelpers\ProjectExt.cs" />
   </ItemGroup>
   <ItemGroup>

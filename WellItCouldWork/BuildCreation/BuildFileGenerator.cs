@@ -3,33 +3,19 @@ using System.Text;
 
 namespace WellItCouldWork.BuildCreation
 {
-    public class BuildFile
+    public class BuildFileGenerator
     {
-        private readonly IList<Class> classes = new List<Class>();
-        private readonly IList<Reference> references = new List<Reference>();
-
-        public BuildFile(IList<Class> classes, IList<Reference> externalReferences)
-        {
-            this.classes = classes;
-            references = externalReferences;
-        }
-
-        public static BuildFile Default
-        {
-            get { return new BuildFile(new List<Class>(), new List<Reference>()); }
-        }
-
-        public string GenerateOutput()
+        public static string GenerateFrom(IList<Class> classes, IList<Reference> references)
         {
             var projectOutput = new StringBuilder("<?xml version=\"1.0\" encoding=\"utf-8\"?>");
             projectOutput.AppendLine("<Project ToolsVersion=\"4.0\" DefaultTargets=\"Build\" xmlns=\"http://schemas.microsoft.com/developer/msbuild/2003\">");
-            projectOutput.AppendLine(GenerateReferencesSection());
-            projectOutput.AppendLine(GenerateClasses());
+            projectOutput.AppendLine(GenerateReferencesSection(references));
+            projectOutput.AppendLine(GenerateClasses(classes));
             projectOutput.AppendLine("</Project>");
             return projectOutput.ToString();
         }
 
-        private string GenerateClasses()
+        private static string GenerateClasses(IEnumerable<Class> classes)
         {
             var sb = new StringBuilder("<ItemGroup>");
             foreach (var classInfo in classes)
@@ -38,8 +24,7 @@ namespace WellItCouldWork.BuildCreation
             return sb.ToString();
         }
 
-
-        private string GenerateReferencesSection()
+        private static string GenerateReferencesSection(IEnumerable<Reference> references)
         {
             var sb = new StringBuilder("<ItemGroup>");
             foreach (var reference in references)
