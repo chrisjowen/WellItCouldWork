@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using ICSharpCode.NRefactory;
@@ -50,19 +49,6 @@ namespace WellItCouldWork.Investigation
                 }
             }
             return types.Distinct(new TypeNameComparer()).ToList();
-        }
-    }
-
-    public class TypeNameComparer : IEqualityComparer<TypeInfo>
-    {
-        public bool Equals(TypeInfo x, TypeInfo y)
-        {
-            return x.Name == y.Name;
-        }
-
-        public int GetHashCode(TypeInfo obj)
-        {
-            return 1;
         }
     }
 }

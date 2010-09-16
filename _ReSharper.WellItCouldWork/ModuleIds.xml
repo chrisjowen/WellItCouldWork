@@ -3,5 +3,5 @@
   <Module PersistentId="d:Miscellaneous Files" ModuleId="ICSharpCode.NRefactory" />
   <Module PersistentId="FA91E592-7DB6-43D6-B413-5BBCF008CFEB" ModuleId="WellItCouldWork.Runner" />
   <Module PersistentId="D768212A-EEC0-4F79-8F57-EC6BDA699744" ModuleId="WellItCouldWork.Tests" />
-  <Module PersistentId="System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" ModuleId="System.Core" />
+  <Module PersistentId="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" ModuleId="mscorlib" />
 </Modules>

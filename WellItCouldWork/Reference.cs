@@ -2,18 +2,17 @@
 {
     public class Reference
     {
-        public Reference(string assemblyName, string path)
+        public Reference(string path)
         {
-            AssemblyName = assemblyName;
-            Path = path;
+            this.path = path;
         }
 
-        public Reference(string assemblyName)
-            : this(assemblyName, string.Empty)
+        private string path;
+        public string Path
         {
+            get { return path.Contains(".dll") ? path : path + ".dll"; }
         }
 
-        public string AssemblyName { get; private set; }
-        public string Path { get; private set; }
+
     }
 }

@@ -1,29 +1,35 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using WellItCouldWork.Investigation;
 
 namespace WellItCouldWork.BuildCreation
 {
-    public class Programmer 
+    public class BuildMonkey 
     {
         private readonly IExamineSourceFiles sourceExaminer;
         private readonly ISolutionFile solutionFile;
         private readonly IGetSourceCode sourceCodeRepo;
         private BuildFiles buildFiles;
 
-        public Programmer(IExamineSourceFiles sourceExaminer, ISolutionFile solutionFile, IGetSourceCode sourceCodeRepo)
+        public static BuildMonkey Using(IExamineSourceFiles examiner, ISolutionFile solutionFile, IGetSourceCode getSourceCode)
+        {
+            return new BuildMonkey(examiner, solutionFile, getSourceCode);
+        }
+
+        private BuildMonkey(IExamineSourceFiles sourceExaminer, ISolutionFile solutionFile, IGetSourceCode sourceCodeRepo)
         {
             this.sourceExaminer = sourceExaminer;
             this.solutionFile = solutionFile;
             this.sourceCodeRepo = sourceCodeRepo;
         }
 
-        public BuildFiles BuildFilesRequired(TypeInfo type)
+        public BuildFiles WhatFilesAreRequiredToBuild(TypeInfo type)
         {
-            return BuildFilesRequired(solutionFile.FindClassByType(type));
+            return WhatFilesAreRequiredToBuild(solutionFile.FindClassByType(type));
         }
 
-        public BuildFiles BuildFilesRequired(Class @class)
+        public BuildFiles WhatFilesAreRequiredToBuild(Class @class)
         {
             var solutionsReferences = solutionFile.AllReferences ?? new List<Reference>();
             buildFiles =  new BuildFiles(@class, ResolveClassesRequiredFor(@class), solutionsReferences);
@@ -43,7 +49,7 @@ namespace WellItCouldWork.BuildCreation
 
         private IList<Class> MatchSolutionClasses(IEnumerable<TypeInfo> types)
         {
-            return types.Select(t => solutionFile.FindClassByType(t)).ToList();
+            return types.Select(t => solutionFile.FindClassByType(t)).Where(c => c!=null).ToList();
         }
 
         //private void WithStandardReferences()

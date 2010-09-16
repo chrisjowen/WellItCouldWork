@@ -3,6 +3,7 @@ using NUnit.Framework;
 using Rhino.Mocks;
 using WellItCouldWork.BuildCreation;
 using WellItCouldWork.Investigation;
+using WellItCouldWork.Tests.TestSyntaxHelpers;
 
 namespace WellItCouldWork.Tests.BuildCreation
 {
@@ -25,21 +26,27 @@ namespace WellItCouldWork.Tests.BuildCreation
         public void ShouldRetrieveClassDependenciesFromExaminer()
         {
             const string source = @"public class Foo() {}";
-
             var fooClass = new Class("Foo");
+
             sourceCodeRepo.Stub(sr => sr.SourceFor(fooClass)).Return(source);
 
-            new Programmer(examiner, solutionFile, sourceCodeRepo).BuildFilesRequired(fooClass);
+            BuildMonkey
+                .Using(examiner, solutionFile, sourceCodeRepo)
+                .WhatFilesAreRequiredToBuild(fooClass);
+
             examiner.AssertWasCalled(e => e.ExamineTypes((source)));
         }        
         
         [Test]
-        public void ShouldNotAddDependenciesToBuildFileIfNotInSolution()
+        public void ShouldNotAddDependencyIfNotInSolution()
         {
             examiner.Stub(e => e.ExamineTypes(Arg<string>.Is.Anything)).Return(new List<TypeInfo> { "Foo" });
             solutionFile.Stub(s => s.FindClassByType(Arg<TypeInfo>.Is.Anything)).Return(new Class("stub"));
-            var buildFile = new Programmer(examiner, solutionFile, sourceCodeRepo).BuildFilesRequired(string.Empty);
-            Assert.That(!buildFile.GenerateBuildFile().Contains("Foo.cs"), "Foo.cs should not be found in the solution");
+            
+            var buildFiles = BuildMonkey.Using(examiner, solutionFile, sourceCodeRepo)
+                                        .WhatFilesAreRequiredToBuild(string.Empty);
+
+            Assert.That(buildFiles.HasAClassCalled("Foo.cs"), Is.False);
         }
 
         [Test]
@@ -47,24 +54,27 @@ namespace WellItCouldWork.Tests.BuildCreation
         {
             var fooClass = new Class("Foo.cs");
             TypeInfo type = "Foo";
+
             examiner.Stub(e => e.ExamineTypes(Arg<string>.Is.Anything)).Return(new List<TypeInfo> { type });
             solutionFile.Stub(s => s.FindClassByType(type)).Return(fooClass);
 
-            var buildFile = new Programmer(examiner, solutionFile, sourceCodeRepo).BuildFilesRequired(string.Empty);
-            Assert.That(buildFile.GenerateBuildFile().Contains("Foo.cs"), "Foo.cs should be found in the solution");
+            var buildFiles = BuildMonkey.Using(examiner, solutionFile, sourceCodeRepo)
+                                        .WhatFilesAreRequiredToBuild(string.Empty);
+
+            Assert.That(buildFiles.HasAClassCalled("Foo.cs"));
+
         }
  
         [Test]
         public void ShouldAddAllReferencesFoundInSolution()
         {
-            var references = new List<Reference>
-            {
-                new Reference("System.Web")
-            };
+            var references = new List<Reference> { new Reference("System.Web") };
             solutionFile.Stub(s => s.AllReferences).Return(references);
 
-            var buildFile = new Programmer(examiner, solutionFile, sourceCodeRepo).BuildFilesRequired(string.Empty);
-            Assert.That(buildFile.GenerateBuildFile().Contains("System.Web"), "System.Web reference should be found in the solution");
+            var buildFile = BuildMonkey.Using(examiner, solutionFile, sourceCodeRepo)
+                                       .WhatFilesAreRequiredToBuild(string.Empty);
+
+            Assert.That(buildFile.HasAReferenceCalled("System.Web.dll"));
         }
     }    
     

@@ -26,7 +26,7 @@ namespace WellItCouldWork
 
         public string FullPath
         {
-            get { return string.Format("{0}//{1}", Path, ClassName); }
+            get { return string.Format("{0}\\{1}", Path, ClassName); }
         }
     }
 }

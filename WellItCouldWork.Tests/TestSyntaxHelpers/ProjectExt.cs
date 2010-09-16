@@ -7,7 +7,7 @@ namespace WellItCouldWork.Tests.TestSyntaxHelpers
     {
         public static bool HasAReferenceCalled(this ProjectFile projectFile, string referenceAssemblyName)
         {
-            return projectFile.References.Any(reference => reference.AssemblyName == referenceAssemblyName);
+            return projectFile.References.Any(reference => reference.Path == referenceAssemblyName);
         }
 
         public static bool HasAClassCalled(this ProjectFile projectFile, string className)

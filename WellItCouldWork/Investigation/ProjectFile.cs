@@ -1,12 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.IO;
-using System.Xml;
+using System.Linq;
+using System.Xml.Linq;
 
 namespace WellItCouldWork.Investigation
 {
     public class ProjectFile : IProjectFile
     {
-        private XmlNode projectDocumentRoot;
+        private IEnumerable<XElement> decendents;
         public string ProjectLocation { get; private set; }
         public string ProjectName { get; private set; }
         public List<Reference> References { get; private set; }
@@ -20,9 +21,8 @@ namespace WellItCouldWork.Investigation
         public static ProjectFile FromFile(string projectFile)
         {
             var project = new ProjectFile();
-            var projectDocument = new XmlDocument();
-            projectDocument.Load(projectFile);
-            project.projectDocumentRoot = projectDocument.DocumentElement;
+            var projectDocument = XDocument.Load(projectFile);
+            project.decendents = projectDocument.Document.Descendants();
             project.InitializeFrom(projectFile);
             return project;
         }
@@ -39,29 +39,32 @@ namespace WellItCouldWork.Investigation
         private void InitializeReferences()
         {
             References = new List<Reference>();
-            foreach (XmlNode referenceNode in projectDocumentRoot.ChildNodes[3].ChildNodes) //XPath is so anoying, come back
+            foreach (var decendent in decendents.Where(decendent => decendent.Name.LocalName == "Reference"))
             {
-                if (referenceNode.Attributes == null) continue;
-                if (!referenceNode.HasChildNodes) continue;
-
-                var dependencyName = referenceNode.Attributes["Include"].Value;
-                var path = referenceNode.ChildNodes[0].InnerText;
-                References.Add(new Reference(dependencyName, path));
-            }
-        }        
-        
-        private void InitializeClasses()
-        {
-            Classes = new List<Class>();
-            foreach (XmlNode referenceNode in projectDocumentRoot.ChildNodes[4].ChildNodes) //XPath is so anoying, come back
-            {
-                if (referenceNode.Attributes == null) continue;
-                var dependencyName = referenceNode.Attributes["Include"].Value;
-                Classes.Add(Class.FromPath(string.Format("{0}//{1}",ProjectLocation,  dependencyName)));
+                References.Add(GetReferenceFor(decendent));
             }
         }
 
- 
+        private void InitializeClasses()
+        {
+            Classes = new List<Class>();
+
+            foreach (var compilationDependency in decendents.Where(decendent => decendent.Name.LocalName == "Compile"))
+            {
+                var filePath = string.Format("{0}//{1}", ProjectLocation, compilationDependency.Attribute("Include").Value);
+                Classes.Add(Class.FromPath(filePath));
+            }
+        }
+
+        private Reference GetReferenceFor(XElement decendent)
+        {
+            if (!string.IsNullOrEmpty(decendent.Value))
+            {
+                var directory = new DirectoryInfo(ProjectLocation + "\\" + decendent.Value);
+                return new Reference(directory.FullName);
+            }
+            return new Reference(decendent.Attribute("Include").Value);
+        }
 
     }
 }

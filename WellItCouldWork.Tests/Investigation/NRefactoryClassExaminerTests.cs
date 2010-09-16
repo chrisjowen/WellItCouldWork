@@ -15,8 +15,8 @@ namespace WellItCouldWork.Tests.Investigation
             const string sourceCode = @"public class Foo : Bar {  }";
             var types = sourceExaminer.ExamineTypes(sourceCode);
             Assert.That(types.Count, Is.EqualTo(2));
-            Assert.That(types.ContainsWithName("Foo"));
-            Assert.That(types.ContainsWithName("Bar"));
+            Assert.That(types.HasATypeCalled("Foo"));
+            Assert.That(types.HasATypeCalled("Bar"));
         }
 
         [Test]
@@ -24,8 +24,8 @@ namespace WellItCouldWork.Tests.Investigation
         {
             const string sourceCode = @"public class Foo : IBar {  }";
             var types = sourceExaminer.ExamineTypes(sourceCode);
-            Assert.That(types.ContainsWithName("Foo"));
-            Assert.That(types.ContainsWithName("IBar"));
+            Assert.That(types.HasATypeCalled("Foo"));
+            Assert.That(types.HasATypeCalled("IBar"));
         }
 
         [Test]
@@ -34,8 +34,8 @@ namespace WellItCouldWork.Tests.Investigation
             const string sourceCode = @"public class Foo { Bar b = new Bar(); }";
             var types = sourceExaminer.ExamineTypes(sourceCode);
             Assert.That(types.Count, Is.EqualTo(2));
-            Assert.That(types.ContainsWithName("Foo"));
-            Assert.That(types.ContainsWithName("Bar"));
+            Assert.That(types.HasATypeCalled("Foo"));
+            Assert.That(types.HasATypeCalled("Bar"));
         }
 
         [Test]
@@ -44,8 +44,8 @@ namespace WellItCouldWork.Tests.Investigation
             const string sourceCode = @"public class Foo { public void FooMethod() { Bar b = new Bar(); } }";
             var types = sourceExaminer.ExamineTypes(sourceCode);
             Assert.That(types.Count, Is.EqualTo(3));
-            Assert.That(types.ContainsWithName("Foo"));
-            Assert.That(types.ContainsWithName("Bar"));
+            Assert.That(types.HasATypeCalled("Foo"));
+            Assert.That(types.HasATypeCalled("Bar"));
         }
             
         [Test]
@@ -53,7 +53,7 @@ namespace WellItCouldWork.Tests.Investigation
         {
             const string sourceCode = @"public class Foo { public void FooMethod() { return (Bar)""abc""; } }";
             var types = sourceExaminer.ExamineTypes(sourceCode);
-            Assert.That(types.ContainsWithName("Bar"));
+            Assert.That(types.HasATypeCalled("Bar"));
         }
 
         [Test]
@@ -61,7 +61,7 @@ namespace WellItCouldWork.Tests.Investigation
         {
             const string sourceCode = @"public class Foo { public void FooMethod() { return new List<Bar>(); } }";
             var types = sourceExaminer.ExamineTypes(sourceCode);
-            Assert.That(types.ContainsWithName("Bar"));
+            Assert.That(types.HasATypeCalled("Bar"));
         }        
         
         [Test]
@@ -69,7 +69,7 @@ namespace WellItCouldWork.Tests.Investigation
         {
             const string sourceCode = @"public class Foo<Bar> {  } }";
             var types = sourceExaminer.ExamineTypes(sourceCode);
-            Assert.That(types.ContainsWithName("Bar"));
+            Assert.That(types.HasATypeCalled("Bar"));
         }
     }
 

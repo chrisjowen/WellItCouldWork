@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
-    <StartArguments>"C:\Code\WellItCouldWork\WellItCouldWork.sln" "C:\Code\WellItCouldWork\WellItCouldWork\Investigation\Solution.cs"</StartArguments>
+    <StartArguments>"C:\Code\WellItCouldWork\WellItCouldWork.sln" "C:\Code\WellItCouldWork\WellItCouldWork.Tests\ClassTests.cs"</StartArguments>
   </PropertyGroup>
   <PropertyGroup>
     <ProjectView>ProjectFiles</ProjectView>

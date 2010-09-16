@@ -38,8 +38,17 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="nunit.core">
+      <HintPath>..\Tools\NUnit\lib\nunit.core.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.core.interfaces">
+      <HintPath>..\Tools\NUnit\lib\nunit.core.interfaces.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.framework">
       <HintPath>..\Tools\NUnit\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.util">
+      <HintPath>..\Tools\NUnit\lib\nunit.util.dll</HintPath>
     </Reference>
     <Reference Include="Rhino.Mocks">
       <HintPath>..\Libs\Rhino.Mocks\Rhino.Mocks.dll</HintPath>
@@ -53,15 +62,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BuildCreation\BuildFileTests.cs" />
+    <Compile Include="BuildCreation\BuildFilesCompilerTests.cs" />
     <Compile Include="BuildCreation\BuildMonkeyTests.cs" />
     <Compile Include="ClassTests.cs" />
+    <Content Include="TestData\test-assembly.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\AssemblyBuilderData\ReferencedDependency.cs.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\AssemblyBuilderData\UnreferencedDependency.cs.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\AssemblyBuilderData\EmptyClass.cs.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Compile Include="Investigation\NRefactoryClassExaminerTests.cs" />
     <Compile Include="Investigation\ProjectTests.cs" />
+    <Compile Include="PitTests.cs" />
+    <Compile Include="TestRunner\NunitTestRunnerTests.cs" />
     <Compile Include="TestSyntaxHelpers\SolutionExt.cs" />
     <Compile Include="Investigation\SolutionTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestSyntaxHelpers\ProjectExt.cs" />
+    <Compile Include="TestSyntaxHelpers\TypeInfoListExt.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="TestData\WellItCouldWork.sln">

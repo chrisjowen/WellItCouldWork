@@ -12,6 +12,7 @@
     <AssemblyName>WellItCouldWork</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,24 +32,27 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ICSharpCode.NRefactory">
+    <Reference Include="ICSharpCode.NRefactory, Version=0.0.0.0, Culture=neutral, PublicKeyToken=efe927acf176eea2, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Libs\ICSharpCode.NRefactory.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BuildCreation\BuildFileGenerator.cs" />
     <Compile Include="BuildCreation\BuildFiles.cs" />
-    <Compile Include="BuildCreation\Programmer.cs" />
+    <Compile Include="BuildCreation\BuildFilesCompiler.cs" />
+    <Compile Include="BuildCreation\BuildMonkey.cs" />
+    <Compile Include="BuildCreation\CompilationResult.cs" />
+    <Compile Include="BuildCreation\ICompileBuildFiles.cs" />
     <Compile Include="Class.cs" />
     <Compile Include="Investigation\IProjectFile.cs" />
     <Compile Include="Investigation\ISolutionFile.cs" />
+    <Compile Include="Investigation\TypeNameComparer.cs" />
     <Compile Include="Reference.cs" />
     <Compile Include="SourceFromFileRepository.cs" />
     <Compile Include="SyntaxHelpers\TypeExt.cs" />
@@ -64,6 +68,7 @@
     <Compile Include="Investigation\SolutionFile.cs" />
     <Compile Include="TypeInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

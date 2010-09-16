@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace WellItCouldWork.BuildCreation
 {
@@ -15,9 +16,10 @@ namespace WellItCouldWork.BuildCreation
         public IList<Class> DependentClasses { get; set; }
         public IList<Reference> References { get; set; }
 
-        public string GenerateBuildFile()
+        public IList<Class> AllClasses
         {
-            return BuildFileGenerator.GenerateFrom(DependentClasses, References);
+            get { return new List<Class> { Target }.Concat(DependentClasses).ToList().AsReadOnly(); }
         }
     }
 }
+
