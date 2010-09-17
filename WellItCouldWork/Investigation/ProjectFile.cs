@@ -2,6 +2,8 @@
 using System.IO;
 using System.Linq;
 using System.Xml.Linq;
+using WellItCouldWork.Investigation.Exceptions;
+using WellItCouldWork.SyntaxHelpers;
 
 namespace WellItCouldWork.Investigation
 {
@@ -33,20 +35,20 @@ namespace WellItCouldWork.Investigation
         {
             return elements
                 .Where(el => el.Name.LocalName == "Reference")
-                .Select(GetReferenceFor).ToList();
+                .Select(ReferenceFor).ToList();
         }
 
         private List<Class> ClassesFrom(IEnumerable<XElement> elements)
         {
             return elements.Where(decendent => decendent.Name.LocalName == "Compile")
-                .Select(el => string.Format("{0}//{1}", ProjectLocation, el.Attribute("Include").Value))
+                .Select(el => string.Format("{0}//{1}", ProjectLocation, AttributeFor(el, "Include")))
                 .Select(Class.FromPath).ToList();
         }
 
-        private Reference GetReferenceFor(XElement decendent)
+        private Reference ReferenceFor(XElement element)
         {
 
-            var hintPath = decendent.Descendants()
+            var hintPath = element.Descendants()
                 .Where(d => d.Name.LocalName == "HintPath")
                 .Select(h => h.Value)
                 .FirstOrDefault();
@@ -56,8 +58,14 @@ namespace WellItCouldWork.Investigation
                 var directory = new DirectoryInfo(ProjectLocation + "\\" + hintPath);
                 return new Reference(directory.FullName);
             }
-            return new Reference(decendent.Attribute("Include").Value);
+            return new Reference(AttributeFor(element, "Include"));
         }
 
+        private string AttributeFor(XElement el, string attribute)
+        {
+            if (!el.HasAttribute(attribute))
+                throw new InvalidProjectFileComplaint(this);
+            return el.Attribute(attribute).Value;
+        }
     }
 }

@@ -43,8 +43,9 @@ namespace WellItCouldWork.Tests.BuildCreation
             examiner.Stub(e => e.ExamineSource(Arg<string>.Is.Anything)).Return(new List<TypeInfo> { "Foo" });
             solutionFile.Stub(s => s.FindClassByType(Arg<TypeInfo>.Is.Anything)).Return(new Class("stub"));
             
-            var buildFiles = BuildMonkey.Using(examiner, solutionFile, sourceCodeRepo)
-                                        .WhatFilesAreRequiredToBuild(string.Empty);
+            var buildFiles = BuildMonkey
+                                .Using(examiner, solutionFile, sourceCodeRepo)
+                                .WhatFilesAreRequiredToBuild(string.Empty);
 
             Assert.That(buildFiles.HasAClassCalled("Foo.cs"), Is.False);
         }
@@ -58,21 +59,23 @@ namespace WellItCouldWork.Tests.BuildCreation
             examiner.Stub(e => e.ExamineSource(Arg<string>.Is.Anything)).Return(new List<TypeInfo> { type });
             solutionFile.Stub(s => s.FindClassByType(type)).Return(fooClass);
 
-            var buildFiles = BuildMonkey.Using(examiner, solutionFile, sourceCodeRepo)
-                                        .WhatFilesAreRequiredToBuild(string.Empty);
+            var buildFiles = BuildMonkey
+                                .Using(examiner, solutionFile, sourceCodeRepo)
+                                .WhatFilesAreRequiredToBuild(string.Empty);
 
             Assert.That(buildFiles.HasAClassCalled("Foo.cs"));
 
         }
  
         [Test]
-        public void ShouldAddAllReferencesFoundInSolution()
+        public void ShouldAddAllReferencesFoundInASolution()
         {
             var references = new List<Reference> { new Reference("System.Web") };
             solutionFile.Stub(s => s.AllReferences).Return(references);
 
-            var buildFile = BuildMonkey.Using(examiner, solutionFile, sourceCodeRepo)
-                                       .WhatFilesAreRequiredToBuild(string.Empty);
+            var buildFile = BuildMonkey
+                                .Using(examiner, solutionFile, sourceCodeRepo)
+                                .WhatFilesAreRequiredToBuild(string.Empty);
 
             Assert.That(buildFile.HasAReferenceCalled("System.Web.dll"));
         }

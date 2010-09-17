@@ -50,10 +50,13 @@
     <Compile Include="BuildCreation\CompilationResult.cs" />
     <Compile Include="BuildCreation\ICompileBuildFiles.cs" />
     <Compile Include="Class.cs" />
+    <Compile Include="Investigation\Exceptions\InvalidProjectFileComplaint.cs" />
     <Compile Include="Investigation\IProjectFile.cs" />
     <Compile Include="Investigation\ISolutionFile.cs" />
+    <Compile Include="Investigation\Exceptions\NoProjectsInSolutionComplaint.cs" />
     <Compile Include="Investigation\TypeFactory.cs" />
     <Compile Include="Investigation\TypeNameComparer.cs" />
+    <Compile Include="SyntaxHelpers\XElementExt.cs" />
     <Compile Include="Reference.cs" />
     <Compile Include="SourceFromFileRepository.cs" />
     <Compile Include="SyntaxHelpers\TypeExt.cs" />

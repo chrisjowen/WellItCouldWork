@@ -2,6 +2,8 @@
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
+using WellItCouldWork.Investigation.Exceptions;
+using WellItCouldWork.SyntaxHelpers;
 
 namespace WellItCouldWork.Investigation
 {
@@ -39,9 +41,12 @@ namespace WellItCouldWork.Investigation
         {
             var matches = new Regex("[.A-Za-z0-9\\\\]*.csproj").Matches(content);
             
-            return matches.Cast<Match>()
+            var projectFiles =  matches.Cast<Match>()
                     .Select(match => ProjectFile.Load(string.Format("{0}\\{1}", Path, match.Value)))
                     .Cast<IProjectFile>().ToList();
+
+            if (projectFiles.IsEmpty()) throw new NoProjectsInSolutionComplaint(this);
+            return projectFiles;
         }
 
         public IList<IProjectFile> Projects

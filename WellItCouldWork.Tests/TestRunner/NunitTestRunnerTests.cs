@@ -7,6 +7,7 @@ using NUnit.Framework;
 namespace WellItCouldWork.Tests.TestRunner
 {
     [TestFixture]
+    [Ignore("WIP")]
     public class NunitTestRunnerTests
     {
         public void ShouldRunTestsFromAssembly()
