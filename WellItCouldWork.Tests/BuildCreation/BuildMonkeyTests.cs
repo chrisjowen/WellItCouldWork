@@ -34,13 +34,13 @@ namespace WellItCouldWork.Tests.BuildCreation
                 .Using(examiner, solutionFile, sourceCodeRepo)
                 .WhatFilesAreRequiredToBuild(fooClass);
 
-            examiner.AssertWasCalled(e => e.ExamineTypes((source)));
+            examiner.AssertWasCalled(e => e.ExamineSource((source)));
         }        
         
         [Test]
         public void ShouldNotAddDependencyIfNotInSolution()
         {
-            examiner.Stub(e => e.ExamineTypes(Arg<string>.Is.Anything)).Return(new List<TypeInfo> { "Foo" });
+            examiner.Stub(e => e.ExamineSource(Arg<string>.Is.Anything)).Return(new List<TypeInfo> { "Foo" });
             solutionFile.Stub(s => s.FindClassByType(Arg<TypeInfo>.Is.Anything)).Return(new Class("stub"));
             
             var buildFiles = BuildMonkey.Using(examiner, solutionFile, sourceCodeRepo)
@@ -55,7 +55,7 @@ namespace WellItCouldWork.Tests.BuildCreation
             var fooClass = new Class("Foo.cs");
             TypeInfo type = "Foo";
 
-            examiner.Stub(e => e.ExamineTypes(Arg<string>.Is.Anything)).Return(new List<TypeInfo> { type });
+            examiner.Stub(e => e.ExamineSource(Arg<string>.Is.Anything)).Return(new List<TypeInfo> { type });
             solutionFile.Stub(s => s.FindClassByType(type)).Return(fooClass);
 
             var buildFiles = BuildMonkey.Using(examiner, solutionFile, sourceCodeRepo)

@@ -6,7 +6,7 @@ namespace WellItCouldWork.Investigation
     {
         string ProjectLocation { get; }
         string ProjectName { get; }
-        List<Reference> References { get; }
+        IList<Reference> References { get; }
         IList<Class> Classes { get; }
     }
 }

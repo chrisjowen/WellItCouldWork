@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using WellItCouldWork.Investigation;
 
@@ -40,7 +39,7 @@ namespace WellItCouldWork.BuildCreation
         {
             IList<Class> classDependencies = new List<Class>();
             var source = sourceCodeRepo.SourceFor(@class);
-            var typesFoundInFile = sourceExaminer.ExamineTypes(source);
+            var typesFoundInFile = sourceExaminer.ExamineSource(source);
             if (typesFoundInFile!=null)
                 classDependencies = MatchSolutionClasses(typesFoundInFile);
 

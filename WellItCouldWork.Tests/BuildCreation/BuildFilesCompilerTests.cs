@@ -27,7 +27,7 @@ namespace WellItCouldWork.Tests.BuildCreation
         }
 
         [Test]
-        public void ShouldFailToBuildAClassWithAValidReferenceIfReferenceNotPassedIn()
+        public void ShouldFailToBuildAClassWithAValidReferenceIfReferenceLoactionNotSupplied()
         {
             var unreferencedClass = Class.FromPath(GetClassPath("ReferencedDependency.cs.txt"));
             var buildFiles = new BuildFiles(unreferencedClass, new List<Class>(), new List<Reference>());
@@ -36,7 +36,7 @@ namespace WellItCouldWork.Tests.BuildCreation
         }
 
         [Test]
-        public void ShouldBuildAClassWithAValidReferenceWhenReferencePassedIn()
+        public void ShouldBuildAClassWithAValidReferenceIfReferenceLoactionIsSupplied()
         {
             var unreferencedClass = Class.FromPath(GetClassPath("ReferencedDependency.cs.txt"));
             var buildFiles = new BuildFiles(unreferencedClass, new List<Class>(), new List<Reference> { new Reference("ICSharpCode.NRefactory")});

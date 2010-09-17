@@ -13,7 +13,7 @@ namespace WellItCouldWork.Tests.Investigation
         public void ShouldTellMeTheInfoAboutASuperClassOfAGivenClass()
         {
             const string sourceCode = @"public class Foo : Bar {  }";
-            var types = sourceExaminer.ExamineTypes(sourceCode);
+            var types = sourceExaminer.ExamineSource(sourceCode);
             Assert.That(types.Count, Is.EqualTo(2));
             Assert.That(types.HasATypeCalled("Foo"));
             Assert.That(types.HasATypeCalled("Bar"));
@@ -23,7 +23,7 @@ namespace WellItCouldWork.Tests.Investigation
         public void ShouldTellMeTheNameOfAnyInterfacesFoundOnAGivenClass()
         {
             const string sourceCode = @"public class Foo : IBar {  }";
-            var types = sourceExaminer.ExamineTypes(sourceCode);
+            var types = sourceExaminer.ExamineSource(sourceCode);
             Assert.That(types.HasATypeCalled("Foo"));
             Assert.That(types.HasATypeCalled("IBar"));
         }
@@ -32,7 +32,7 @@ namespace WellItCouldWork.Tests.Investigation
         public void ShouldTellMeAboutTheDependenciesAtFieldLevel()
         {
             const string sourceCode = @"public class Foo { Bar b = new Bar(); }";
-            var types = sourceExaminer.ExamineTypes(sourceCode);
+            var types = sourceExaminer.ExamineSource(sourceCode);
             Assert.That(types.Count, Is.EqualTo(2));
             Assert.That(types.HasATypeCalled("Foo"));
             Assert.That(types.HasATypeCalled("Bar"));
@@ -42,7 +42,7 @@ namespace WellItCouldWork.Tests.Investigation
         public void ShouldTellMeAboutTheDependenciesAtLocalVarLevel()
         {
             const string sourceCode = @"public class Foo { public void FooMethod() { Bar b = new Bar(); } }";
-            var types = sourceExaminer.ExamineTypes(sourceCode);
+            var types = sourceExaminer.ExamineSource(sourceCode);
             Assert.That(types.Count, Is.EqualTo(3));
             Assert.That(types.HasATypeCalled("Foo"));
             Assert.That(types.HasATypeCalled("Bar"));
@@ -52,7 +52,7 @@ namespace WellItCouldWork.Tests.Investigation
         public void ShouldTellMeTheNameOfAnyDepndenciesWhenCasting()
         {
             const string sourceCode = @"public class Foo { public void FooMethod() { return (Bar)""abc""; } }";
-            var types = sourceExaminer.ExamineTypes(sourceCode);
+            var types = sourceExaminer.ExamineSource(sourceCode);
             Assert.That(types.HasATypeCalled("Bar"));
         }
 
@@ -60,7 +60,7 @@ namespace WellItCouldWork.Tests.Investigation
         public void ShouldTellMeTheNameOfAnyDepndenciesUsedInGenericObjectConstruction()
         {
             const string sourceCode = @"public class Foo { public void FooMethod() { return new List<Bar>(); } }";
-            var types = sourceExaminer.ExamineTypes(sourceCode);
+            var types = sourceExaminer.ExamineSource(sourceCode);
             Assert.That(types.HasATypeCalled("Bar"));
         }        
         
@@ -68,7 +68,7 @@ namespace WellItCouldWork.Tests.Investigation
         public void ShouldTellMeTheNameOfAnyDepndenciesUsedInGenericConstructor()
         {
             const string sourceCode = @"public class Foo<Bar> {  } }";
-            var types = sourceExaminer.ExamineTypes(sourceCode);
+            var types = sourceExaminer.ExamineSource(sourceCode);
             Assert.That(types.HasATypeCalled("Bar"));
         }
     }

@@ -12,9 +12,9 @@ namespace WellItCouldWork.BuildCreation
             References = references;
         }
 
-        public Class Target { get; set; }
-        public IList<Class> DependentClasses { get; set; }
-        public IList<Reference> References { get; set; }
+        public Class Target { get; private set; }
+        public IList<Class> DependentClasses { get; private set; }
+        public IList<Reference> References { get; private set; }
 
         public IList<Class> AllClasses
         {

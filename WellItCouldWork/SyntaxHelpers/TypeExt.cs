@@ -8,7 +8,8 @@ namespace WellItCouldWork.SyntaxHelpers
     {
         public static bool IsNodeOrNodeList(this Type type)
         {
-            return (typeof (INode).IsAssignableFrom(type) || typeof (IEnumerable<INode>).IsAssignableFrom(type));
+            return typeof (INode).IsAssignableFrom(type) 
+                || typeof (IEnumerable<INode>).IsAssignableFrom(type);
         }        
         
     }

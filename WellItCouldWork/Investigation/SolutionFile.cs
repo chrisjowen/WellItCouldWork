@@ -8,24 +8,40 @@ namespace WellItCouldWork.Investigation
     public class SolutionFile : ISolutionFile
     {
         private readonly IList<IProjectFile> projects = new List<IProjectFile>();
-        private readonly string content = string.Empty;
-
+        
         public string Name { get; private set; }
         public string Path { get; private set; }
 
-        public SolutionFile(string filePath)
+        public static SolutionFile Load(string filePath)
         {
-            var file = new FileInfo(filePath);
-            content = File.ReadAllText(filePath);
+            return new SolutionFile(new FileInfo(filePath));
+        }
+
+        private SolutionFile(FileInfo file)
+        {
             Path = file.DirectoryName;
             Name = file.Name;
-            ResolveProjectFiles();
+            projects = ResolveProjectFilesFrom(file);
         }
-        private void ResolveProjectFiles()
+
+        private IList<IProjectFile> ResolveProjectFilesFrom(FileInfo file)
+        {
+            using (var fileStream = file.OpenRead())
+            {
+                using(var reader = new StreamReader(fileStream))
+                {
+                    return ResolveProjectFilesFrom(reader.ReadToEnd());
+                }
+            }
+        }
+
+        private IList<IProjectFile> ResolveProjectFilesFrom(string content)
         {
             var matches = new Regex("[.A-Za-z0-9\\\\]*.csproj").Matches(content);
-            foreach (var match in matches.Cast<Match>())
-                projects.Add(ProjectFile.FromFile(string.Format("{0}\\{1}", Path, match.Value)));
+            
+            return matches.Cast<Match>()
+                    .Select(match => ProjectFile.Load(string.Format("{0}\\{1}", Path, match.Value)))
+                    .Cast<IProjectFile>().ToList();
         }
 
         public IList<IProjectFile> Projects

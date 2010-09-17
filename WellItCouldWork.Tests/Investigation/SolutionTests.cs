@@ -12,7 +12,7 @@ namespace WellItCouldWork.Tests.Investigation
         public void ShouldRetrieveAllProjectsFromSolutionFile()
         {
             const string projectSampleLocation = @"TestData/WellItCouldWork.sln";
-            var solution = new SolutionFile(projectSampleLocation);
+            var solution = SolutionFile.Load(projectSampleLocation);
             Assert.That(solution.ContainsAProjectCalled("WellItCouldWork.csproj"));
             Assert.That(solution.Name, Is.EqualTo("WellItCouldWork.sln"));
             Assert.That(solution.Path, Is.EqualTo(Environment.CurrentDirectory + "\\TestData"));

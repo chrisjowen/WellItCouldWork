@@ -38,11 +38,13 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="nunit.core">
-      <HintPath>..\Tools\NUnit\lib\nunit.core.dll</HintPath>
+    <Reference Include="nunit.core, Version=2.5.2.9222, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Tools\Nunit2\nunit.core.dll</HintPath>
     </Reference>
-    <Reference Include="nunit.core.interfaces">
-      <HintPath>..\Tools\NUnit\lib\nunit.core.interfaces.dll</HintPath>
+    <Reference Include="nunit.core.interfaces, Version=2.5.2.9222, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Tools\Nunit2\nunit.core.interfaces.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>..\Tools\NUnit\nunit.framework.dll</HintPath>

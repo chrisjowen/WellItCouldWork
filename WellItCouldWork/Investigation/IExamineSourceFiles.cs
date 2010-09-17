@@ -4,6 +4,6 @@ namespace WellItCouldWork.Investigation
 {
     public interface IExamineSourceFiles
     {
-        IList<TypeInfo> ExamineTypes(string code);
+        IList<TypeInfo> ExamineSource(string code);
     }
 }

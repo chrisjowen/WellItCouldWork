@@ -18,37 +18,15 @@ namespace WellItCouldWork.Investigation
             }
         }
 
-        public IList<TypeInfo> ExamineTypes(string code)
+        public IList<TypeInfo> ExamineSource(string code)
         {
             var result = GetCompilationResult(code);
             var nodes = result.Flatten();
 
-            var types = new List<TypeInfo>();
-
-            foreach (var node in nodes)
-            {
-                if (node.IsA<ObjectCreateExpression>())
-                {
-                    var creationNode = (ObjectCreateExpression) node;
-                    types.Add(new TypeInfo(creationNode.CreateType.Type));
-                }
-                if (node.IsA<TypeDeclaration>())
-                {
-                    var creationNode = (TypeDeclaration)node;
-                    types.Add(new TypeInfo(creationNode.Name));
-                }
-                if (node.IsA<TypeReference>())
-                {
-                    var creationNode = (TypeReference)node;
-                    types.Add(new TypeInfo(creationNode.Type));
-                }                
-                if (node.IsA<TemplateDefinition>())
-                {
-                    var creationNode = (TemplateDefinition)node;
-                    types.Add(new TypeInfo(creationNode.Name));
-                }
-            }
-            return types.Distinct(new TypeNameComparer()).ToList();
+            return (from node in nodes 
+                    let type = new TypeFactory().For(node)
+                    where type != null 
+                    select type).Distinct(new TypeNameComparer()).ToList();
         }
     }
 }

@@ -52,16 +52,14 @@
     <Compile Include="Class.cs" />
     <Compile Include="Investigation\IProjectFile.cs" />
     <Compile Include="Investigation\ISolutionFile.cs" />
+    <Compile Include="Investigation\TypeFactory.cs" />
     <Compile Include="Investigation\TypeNameComparer.cs" />
     <Compile Include="Reference.cs" />
     <Compile Include="SourceFromFileRepository.cs" />
     <Compile Include="SyntaxHelpers\TypeExt.cs" />
-    <Compile Include="SyntaxHelpers\IGiveAFluentFeelToYourSyntaxFor.cs" />
-    <Compile Include="Investigation\NodeFlattener.cs" />
     <Compile Include="Investigation\NodeExt.cs" />
     <Compile Include="Investigation\NRefactorySourceExaminer.cs" />
     <Compile Include="SyntaxHelpers\GenericListExtensions.cs" />
-    <Compile Include="SyntaxHelpers\StringExtensions.cs" />
     <Compile Include="Investigation\IExamineSourceFiles.cs" />
     <Compile Include="Investigation\ProjectFile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

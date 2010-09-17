@@ -8,20 +8,21 @@ namespace WellItCouldWork.BuildCreation
     {
         public CompilationResult Compile(BuildFiles buildFiles)
         {
-            var codeDomProvider = new CSharpCodeProvider();
-            var options = new CompilerParameters();
+            using(var codeDomProvider = new CSharpCodeProvider())
+            {
+                var fileNames = buildFiles.AllClasses.Select(c => c.FullPath).ToArray();
+                var references = buildFiles.References
+                    .Select(reference => reference.Path)
+                    .ToArray();
 
-            var references = buildFiles.References
-                .Select(reference => reference.Path)
-                .ToArray();
+                var options = new CompilerParameters();
+                options.ReferencedAssemblies.AddRange(references);
+                var result = codeDomProvider.CompileAssemblyFromFile(options, fileNames);
+                
+                var errors = result.Errors.Cast<CompilerError>().Select(error => error.ErrorText);
+                return new CompilationResult(errors, result.PathToAssembly);
+            }
 
-            options.ReferencedAssemblies.AddRange(references);
-
-            var fileNames = buildFiles.AllClasses.Select(c => c.FullPath).ToArray();
-            var result = codeDomProvider.CompileAssemblyFromFile(options, fileNames);
-
-            var errors = result.Errors.Cast<object>().Select(error => error.ToString());
-            return new CompilationResult(errors, result.PathToAssembly);
         }
     }
 }

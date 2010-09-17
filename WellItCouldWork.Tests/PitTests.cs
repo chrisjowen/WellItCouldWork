@@ -10,6 +10,7 @@ namespace WellItCouldWork.Tests
     public class PitTests
     {
         [Test]
+        [Ignore("Point in time test only")]
         public void CanLoadCorrectShit()
         {
             var runner = new SimpleTestRunner();

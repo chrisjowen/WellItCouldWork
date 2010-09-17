@@ -14,7 +14,7 @@ namespace WellItCouldWork.Tests.Investigation
         public void BeforeEachTest()
         {
             const string projectSampleLocation = @"TestData/WellItCouldWork/WellItCouldWork.csproj";
-            projectFile = ProjectFile.FromFile(projectSampleLocation);
+            projectFile = ProjectFile.Load(projectSampleLocation);
         }
 
         [Test]
@@ -27,7 +27,7 @@ namespace WellItCouldWork.Tests.Investigation
         [Test]
         public void ShouldTellMeTheExternalDependenciesAProjectReferences()
         {
-            Assert.That(projectFile.HasAReferenceCalled("nunit.framework"));
+            Assert.That(projectFile.HasAReferenceCalled("System.dll"));
         }         
         
         [Test]
