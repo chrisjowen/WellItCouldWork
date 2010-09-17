@@ -1,7 +1,0 @@
-<Modules>
-  <Module PersistentId="E9F925B8-C23D-448D-99F3-F11291CE505D" ModuleId="WellItCouldWork" />
-  <Module PersistentId="d:Miscellaneous Files" ModuleId="ICSharpCode.NRefactory" />
-  <Module PersistentId="FA91E592-7DB6-43D6-B413-5BBCF008CFEB" ModuleId="WellItCouldWork.Runner" />
-  <Module PersistentId="D768212A-EEC0-4F79-8F57-EC6BDA699744" ModuleId="WellItCouldWork.Tests" />
-  <Module PersistentId="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" ModuleId="mscorlib" />
-</Modules>

@@ -1,7 +1,0 @@
-R# version: 5.1.1727.12
-assembly EnvDTE, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-  file C:\Program Files\Microsoft Visual Studio 10.0\Common7\IDE\PublicAssemblies\envdte.dll mtime 22/10/2009 18:51:18
-referenced assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-  file C:\Windows\Microsoft.NET\Framework\v4.0.30319\mscorlib.dll mtime 18/03/2010 12:16:28
-referenced assembly stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-  file C:\Program Files\Microsoft.NET\Primary Interop Assemblies\stdole.dll mtime 18/03/2010 22:21:56
