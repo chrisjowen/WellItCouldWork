@@ -25,9 +25,13 @@ namespace WellItCouldWork.Runner
             var buildFiles = BuildMonkey.Using(new NRefactorySourceExaminer(), solution, new SourceFromFileRepository())
                                         .WhatFilesAreRequiredToBuild(type);
 
+            Console.WriteLine("Found classes:");
             foreach(var dependentClass in buildFiles.DependentClasses)
                 Console.WriteLine(" - " + dependentClass.ClassName);
 
+            Console.WriteLine("Found references:");
+            foreach (var reference in buildFiles.References)
+                Console.WriteLine(" - " + reference.Path);
 
             Console.WriteLine("-------------------------------");
             Console.WriteLine("Compiling files");

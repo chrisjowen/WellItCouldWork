@@ -50,17 +50,5 @@ namespace WellItCouldWork.BuildCreation
         {
             return types.Select(t => solutionFile.FindClassByType(t)).Where(c => c!=null).ToList();
         }
-
-        //private void WithStandardReferences()
-        //{
-        //    references.Add(new Reference("System"));
-        //    references.Add(new Reference("System.Core"));
-        //    references.Add(new Reference("System.Data.DataSetExtensions"));
-        //    references.Add(new Reference("System.Data"));
-        //    references.Add(new Reference("System.Xml"));
-        //}
-
-
-
     }
 }

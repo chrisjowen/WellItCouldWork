@@ -50,6 +50,7 @@
     <Compile Include="BuildCreation\CompilationResult.cs" />
     <Compile Include="BuildCreation\ICompileBuildFiles.cs" />
     <Compile Include="Class.cs" />
+    <Compile Include="IGetSourceCode.cs" />
     <Compile Include="Investigation\Exceptions\InvalidProjectFileComplaint.cs" />
     <Compile Include="Investigation\IProjectFile.cs" />
     <Compile Include="Investigation\ISolutionFile.cs" />

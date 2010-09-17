@@ -9,9 +9,4 @@ namespace WellItCouldWork
             return File.ReadAllText(testClass.FullPath);
         }
     }
-
-    public interface IGetSourceCode
-    {
-        string SourceFor(Class testClass);
-    }
 }
