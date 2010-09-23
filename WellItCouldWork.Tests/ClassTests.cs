@@ -12,5 +12,11 @@ namespace WellItCouldWork.Tests
             var @class = new Class(classname);
             Assert.That(@class.ClassName, Is.EqualTo(classname));
         }
+
+        [Test]
+        public void ShouldFail()
+        {
+            Assert.True(false, "Failed on purpose");
+        }
     }
 }

@@ -13,15 +13,23 @@ namespace WellItCouldWork.Tests
         [Ignore("Point in time test only")]
         public void CanLoadCorrectShit()
         {
+            var builder = new TestSuiteBuilder();
+            
             var runner = new SimpleTestRunner();
-            var assemblies = new List<AssemblyName>
+            
+            var assemblies = new List<string>
                                  {
-                                     new AssemblyName(@"C:\Code\WellItCouldWork\WellItCouldWork.Tests\TestData\test-assembly.dll") 
-
+                                     "test-assembly.dll" 
                                  };
+
+
+
+
             var package = new TestPackage("somePackage", assemblies);
-            runner.Load(package);
-            runner.Run(new ConsoleEventListener());
+            package.PrivateBinPath = @"C:\Code\WellItCouldWork\WellItCouldWork.Tests\TestData\";
+            builder.Build(package);
+
+       
         }
     }
 

@@ -16,7 +16,7 @@ C:\Code\WellItCouldWork\WellItCouldWork.Tests\bin\Debug\TestData\AssemblyBuilder
 C:\Code\WellItCouldWork\WellItCouldWork.Tests\bin\Debug\TestData\AssemblyBuilderData\EmptyClass.cs.txt
 C:\Code\WellItCouldWork\WellItCouldWork.Tests\bin\Debug\TestData\AssemblyBuilderData\ReferencedDependency.cs.txt
 C:\Code\WellItCouldWork\WellItCouldWork.Tests\bin\Debug\ICSharpCode.NRefactory.dll
-C:\Code\WellItCouldWork\WellItCouldWork.Tests\bin\Debug\nunit.core.dll
-C:\Code\WellItCouldWork\WellItCouldWork.Tests\bin\Debug\nunit.core.interfaces.dll
 C:\Code\WellItCouldWork\WellItCouldWork.Tests\bin\Debug\nunit.util.dll
 C:\Code\WellItCouldWork\WellItCouldWork.Tests\bin\Debug\TestData\test-assembly.dll
+C:\Code\WellItCouldWork\WellItCouldWork.Tests\bin\Debug\nunit.core.dll
+C:\Code\WellItCouldWork\WellItCouldWork.Tests\bin\Debug\nunit.core.interfaces.dll
