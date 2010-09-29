@@ -67,7 +67,7 @@
   <ItemGroup>
     <Compile Include="BuildCreation\BuildFilesCompilerTests.cs" />
     <Compile Include="BuildCreation\BuildMonkeyTests.cs" />
-    <Compile Include="ClassTests.cs" />
+    <Compile Include="SimpleTestForConsoleRunner.cs" />
     <Content Include="TestData\nunit.framework.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
