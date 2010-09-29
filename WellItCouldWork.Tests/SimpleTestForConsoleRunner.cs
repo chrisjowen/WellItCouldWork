@@ -8,7 +8,7 @@ namespace WellItCouldWork.Tests
         [Test]
         public void ShouldJustPass()
         {
-            Assert.IsTrue(true);
+            Assert.IsTrue(true); 
         }
 
         [Test]
@@ -16,7 +16,7 @@ namespace WellItCouldWork.Tests
         {
             const string className = "ClassName";
             var aClass = new Class(className);
-            Assert.That(aClass.ClassName, Is.EqualTo(className));
+            Assert.That(aClass.ClassName, Is.EqualTo(className)); 
         }
     }
 }

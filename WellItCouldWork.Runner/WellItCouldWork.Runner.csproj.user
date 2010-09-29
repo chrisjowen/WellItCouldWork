@@ -4,6 +4,6 @@
     <StartArguments>"C:\Code\WellItCouldWork\WellItCouldWork.sln" "C:\Code\WellItCouldWork\WellItCouldWork.Tests\SimpleTestForConsoleRunner.cs"</StartArguments>
   </PropertyGroup>
   <PropertyGroup>
-    <ProjectView>ProjectFiles</ProjectView>
+    <ProjectView>ShowAllFiles</ProjectView>
   </PropertyGroup>
 </Project>

@@ -4,7 +4,7 @@ using WellItCouldWork.BuildCreation;
 
 namespace WellItCouldWork.Tests.BuildCreation
 {
-    [TestFixture]
+    [TestFixture]  
     public class BuildFilesCompilerTests
     {
         [Test]
