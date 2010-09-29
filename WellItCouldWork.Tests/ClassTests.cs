@@ -16,7 +16,7 @@ namespace WellItCouldWork.Tests
         [Test]
         public void TestB()
         {
-            Assert.That(true, Is.EqualTo(true)); 
+            Assert.That(true, Is.EqualTo(true));   
         } 
     }
 }

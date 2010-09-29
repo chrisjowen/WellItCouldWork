@@ -11,7 +11,7 @@ namespace WellItCouldWork.Tests.TestRunner
         {
             var testRunner = new NUnitConsoleRunner("TestData/test-assembly.dll");
             var output = testRunner.RunAllTests();
-            Assert.That(output.ToLower(), Contains.Substring("Failed on purpose"));
+            Assert.That(output.ToLower(), Contains.Substring("failed on purpose"));
         }
     }
 
