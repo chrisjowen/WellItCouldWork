@@ -68,6 +68,9 @@
     <Compile Include="BuildCreation\BuildFilesCompilerTests.cs" />
     <Compile Include="BuildCreation\BuildMonkeyTests.cs" />
     <Compile Include="ClassTests.cs" />
+    <Content Include="TestData\nunit.framework.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="TestData\test-assembly.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -82,7 +85,6 @@
     </Content>
     <Compile Include="Investigation\NRefactoryClassExaminerTests.cs" />
     <Compile Include="Investigation\ProjectTests.cs" />
-    <Compile Include="PitTests.cs" />
     <Compile Include="TestRunner\NunitTestRunnerTests.cs" />
     <Compile Include="TestSyntaxHelpers\SolutionExt.cs" />
     <Compile Include="Investigation\SolutionTests.cs" />

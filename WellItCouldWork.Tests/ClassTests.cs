@@ -14,9 +14,9 @@ namespace WellItCouldWork.Tests
         }
 
         [Test]
-        public void ShouldFail()
+        public void TestB()
         {
-            Assert.True(false, "Failed on purpose");
-        }
+            Assert.That(true, Is.EqualTo(true)); 
+        } 
     }
 }

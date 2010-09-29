@@ -1,18 +1,39 @@
-﻿namespace WellItCouldWork
+﻿using System;
+
+namespace WellItCouldWork
 {
     public class Reference
     {
-        public Reference(string path)
+        private readonly string path;
+        private readonly string fileName;
+
+        public Reference(string fileName)
+            : this(string.Empty, fileName)
+        {
+        }
+
+        public Reference(string path, string fileName)
         {
             this.path = path;
+            this.fileName = fileName;
         }
 
-        private string path;
-        public string Path
+        public string FullPath
         {
-            get { return path.Contains(".dll") ? path : path + ".dll"; }
+            get
+            {
+                return !string.IsNullOrEmpty(path) ? path + "\\" + Filename : Filename;
+            }
         }
 
+        public bool IsExternalAssembily
+        {
+            get { return !string.IsNullOrEmpty(path); } 
+        }
 
+        public string Filename
+        {
+            get { return fileName.Contains(".dll") ? fileName : fileName + ".dll"; }
+        }
     }
 }

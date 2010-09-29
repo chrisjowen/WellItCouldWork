@@ -7,7 +7,6 @@ C:\Code\WellItCouldWork\WellItCouldWork.Tests\bin\Debug\nunit.framework.dll
 C:\Code\WellItCouldWork\WellItCouldWork.Tests\bin\Debug\Rhino.Mocks.dll
 C:\Code\WellItCouldWork\WellItCouldWork.Tests\bin\Debug\WellItCouldWork.dll
 C:\Code\WellItCouldWork\WellItCouldWork.Tests\bin\Debug\WellItCouldWork.pdb
-C:\Code\WellItCouldWork\WellItCouldWork.Tests\bin\Debug\nunit.framework.xml
 C:\Code\WellItCouldWork\WellItCouldWork.Tests\bin\Debug\Rhino.Mocks.xml
 C:\Code\WellItCouldWork\WellItCouldWork.Tests\bin\Debug\ICSharpCode.NRefactory.pdb
 C:\Code\WellItCouldWork\WellItCouldWork.Tests\obj\x86\Debug\WellItCouldWork.Tests.dll
@@ -20,3 +19,4 @@ C:\Code\WellItCouldWork\WellItCouldWork.Tests\bin\Debug\nunit.util.dll
 C:\Code\WellItCouldWork\WellItCouldWork.Tests\bin\Debug\TestData\test-assembly.dll
 C:\Code\WellItCouldWork\WellItCouldWork.Tests\bin\Debug\nunit.core.dll
 C:\Code\WellItCouldWork\WellItCouldWork.Tests\bin\Debug\nunit.core.interfaces.dll
+C:\Code\WellItCouldWork\WellItCouldWork.Tests\bin\Debug\TestData\nunit.framework.dll

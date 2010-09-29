@@ -55,8 +55,8 @@ namespace WellItCouldWork.Investigation
 
             if (!string.IsNullOrEmpty(hintPath))
             {
-                var directory = new DirectoryInfo(ProjectLocation + "\\" + hintPath);
-                return new Reference(directory.FullName);
+                var fileInfo = new FileInfo(ProjectLocation + "\\" + hintPath);
+                return new Reference(fileInfo.Directory.FullName,  fileInfo.Name);
             }
             return new Reference(AttributeFor(element, "Include"));
         }

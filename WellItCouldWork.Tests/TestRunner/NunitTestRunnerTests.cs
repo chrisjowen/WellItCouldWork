@@ -1,26 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using NUnit.Framework;
+﻿using NUnit.Framework;
+using WellItCouldWork.TestRunner;
 
 namespace WellItCouldWork.Tests.TestRunner
 {
     [TestFixture]
-    [Ignore("WIP")]
     public class NunitTestRunnerTests
     {
+        [Test]
         public void ShouldRunTestsFromAssembly()
         {
-            var testRunner = new NunitTestRunner("TestData/test-assembly.dll");
+            var testRunner = new NUnitConsoleRunner("TestData/test-assembly.dll");
+            var output = testRunner.RunAllTests();
+            Assert.That(output.ToLower(), Contains.Substring("Failed on purpose"));
         }
     }
 
-    public class NunitTestRunner
-    {
-        public NunitTestRunner(string testdataTestAssemblyDll)
-        {
-            throw new NotImplementedException();
-        }
-    }
+  
 }

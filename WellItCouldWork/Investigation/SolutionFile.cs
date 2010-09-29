@@ -61,6 +61,7 @@ namespace WellItCouldWork.Investigation
 
         public Class FindClassByType(TypeInfo type)
         {
+            var allClasses = string.Join("'", AllClasses.Select(c => c.ClassName));
             return AllClasses.FirstOrDefault(c => c.ClassName == type.Name + ".cs");
         }
         

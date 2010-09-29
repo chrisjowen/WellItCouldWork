@@ -21,7 +21,7 @@ namespace WellItCouldWork.Tests.TestSyntaxHelpers
 
         public static bool HasAReferenceCalled(this BuildFiles buildFiles, string name)
         {
-            return buildFiles.References.Any(c => c.Path == name);
+            return buildFiles.References.Any(c => c.FullPath == name);
         }
     }
 }

@@ -12,7 +12,7 @@ namespace WellItCouldWork.BuildCreation
             {
                 var fileNames = buildFiles.AllClasses.Select(c => c.FullPath).ToArray();
                 var references = buildFiles.References
-                    .Select(reference => reference.Path)
+                    .Select(reference => reference.FullPath)
                     .ToArray();
 
                 var options = new CompilerParameters();
