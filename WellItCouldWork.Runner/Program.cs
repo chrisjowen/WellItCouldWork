@@ -17,7 +17,11 @@ namespace WellItCouldWork.Runner
 
         static void Main(string[] args)
         {
-            if(args.Count() != 2) throw new ApplicationException("Solution and Test file required");
+            if(args.Count() != 2)
+            {
+                Console.WriteLine("Solution and Test file required");
+                return;
+            }
 
             solutionFilePath = args[0];
             testFilePath = args[1];
